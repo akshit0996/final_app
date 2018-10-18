@@ -17,22 +17,11 @@ import com.lema.android.heartbeatlistener.sound.AudioStateManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView((int) C0722R.layout.activity_main);
 
-            this.recordLaunchInterstitialAd = new InterstitialAd(this);
-            this.recordLaunchInterstitialAd.setAdUnitId("ca-app-pub-3071667822056799/4148128662");
-            this.recordLaunchInterstitialAd.setAdListener(new C12821());
-            requestNewInterstitial(this.recordLaunchInterstitialAd);
-            this.recordingPlayerShowInterstitialAd = new InterstitialAd(this);
-            this.recordingPlayerShowInterstitialAd.setAdUnitId("ca-app-pub-3071667822056799/5624861868");
-            this.recordingPlayerShowInterstitialAd.setAdListener(new C12832());
-            requestNewInterstitial(this.recordingPlayerShowInterstitialAd);
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction().add((int) C0722R.id.container, new MainFragment()).commit();
             }
@@ -69,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         }
-    }
+
 }
 
 
