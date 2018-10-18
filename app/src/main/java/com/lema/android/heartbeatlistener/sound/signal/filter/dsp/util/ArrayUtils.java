@@ -7,7 +7,7 @@ import java.util.Comparator;
 public class ArrayUtils {
 
     /* renamed from: com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils$1 */
-    class C07401 implements Comparator<Double> {
+    static class C07401 implements Comparator<Double> {
         C07401() {
         }
 
@@ -21,7 +21,7 @@ public class ArrayUtils {
     }
 
     /* renamed from: com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils$2 */
-    class C07412 implements Comparator<Complex> {
+    static class C07412 implements Comparator<Complex> {
         C07412() {
         }
 
@@ -41,7 +41,7 @@ public class ArrayUtils {
     }
 
     /* renamed from: com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils$3 */
-    class C07423 implements Comparator<Complex> {
+    static class C07423 implements Comparator<Complex> {
         C07423() {
         }
 
