@@ -4,7 +4,7 @@ import android.support.v4.media.TransportMediator;
 import com.coremedia.iso.IsoFile;
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.google.android.gms.games.quest.Quests;
+
 import com.googlecode.mp4parser.AbstractBox;
 import com.googlecode.mp4parser.RequiresParseDetailAspect;
 import com.googlecode.mp4parser.annotations.DoNotParseDetail;
@@ -29,19 +29,7 @@ public class SegmentTypeBox extends AbstractBox {
     private String majorBrand;
     private long minorVersion;
 
-    static {
-        ajc$preClinit();
-    }
 
-    private static /* synthetic */ void ajc$preClinit() {
-        Factory factory = new Factory("SegmentTypeBox.java", SegmentTypeBox.class);
-        ajc$tjp_0 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "getMajorBrand", "com.coremedia.iso.boxes.fragment.SegmentTypeBox", "", "", "", "java.lang.String"), 85);
-        ajc$tjp_1 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "setMajorBrand", "com.coremedia.iso.boxes.fragment.SegmentTypeBox", "java.lang.String", "majorBrand", "", "void"), 94);
-        ajc$tjp_2 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "setMinorVersion", "com.coremedia.iso.boxes.fragment.SegmentTypeBox", "int", "minorVersion", "", "void"), (int) Quests.SELECT_RECENTLY_FAILED);
-        ajc$tjp_3 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "getMinorVersion", "com.coremedia.iso.boxes.fragment.SegmentTypeBox", "", "", "", "long"), 113);
-        ajc$tjp_4 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "getCompatibleBrands", "com.coremedia.iso.boxes.fragment.SegmentTypeBox", "", "", "", "java.util.List"), 122);
-        ajc$tjp_5 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "setCompatibleBrands", "com.coremedia.iso.boxes.fragment.SegmentTypeBox", "java.util.List", "compatibleBrands", "", "void"), (int) TransportMediator.KEYCODE_MEDIA_PLAY);
-    }
 
     public SegmentTypeBox() {
         super(TYPE);

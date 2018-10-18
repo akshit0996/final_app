@@ -7,7 +7,6 @@ import com.coremedia.iso.boxes.SampleDescriptionBox;
 import com.coremedia.iso.boxes.SoundMediaHeaderBox;
 import com.coremedia.iso.boxes.SubSampleInformationBox;
 import com.coremedia.iso.boxes.sampleentry.AudioSampleEntry;
-import com.google.android.gms.location.LocationRequest;
 import com.googlecode.mp4parser.DataSource;
 import com.googlecode.mp4parser.authoring.AbstractTrack;
 import com.googlecode.mp4parser.authoring.Sample;
@@ -323,7 +322,7 @@ public class AC3TrackImpl extends AbstractTrack {
         bitRateAndFrameSizeTable[2][0][1][0] = 48;
         bitRateAndFrameSizeTable[2][1][1][0] = 48;
         bitRateAndFrameSizeTable[2][0][1][1] = 104;
-        bitRateAndFrameSizeTable[2][1][1][1] = LocationRequest.PRIORITY_NO_POWER;
+        bitRateAndFrameSizeTable[2][1][1][1] = 13444;
         bitRateAndFrameSizeTable[3][0][1][0] = 56;
         bitRateAndFrameSizeTable[3][1][1][0] = 56;
         bitRateAndFrameSizeTable[3][0][1][1] = 121;

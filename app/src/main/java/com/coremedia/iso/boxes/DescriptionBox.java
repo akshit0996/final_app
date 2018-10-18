@@ -3,7 +3,7 @@ package com.coremedia.iso.boxes;
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
 import com.coremedia.iso.Utf8;
-import com.google.android.gms.plus.PlusShare;
+
 import com.googlecode.mp4parser.AbstractFullBox;
 import com.googlecode.mp4parser.RequiresParseDetailAspect;
 import java.nio.ByteBuffer;
@@ -21,18 +21,8 @@ public class DescriptionBox extends AbstractFullBox {
     private String description;
     private String language;
 
-    static {
-        ajc$preClinit();
-    }
 
-    private static /* synthetic */ void ajc$preClinit() {
-        Factory factory = new Factory("DescriptionBox.java", DescriptionBox.class);
-        ajc$tjp_0 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "getLanguage", "com.coremedia.iso.boxes.DescriptionBox", "", "", "", "java.lang.String"), 40);
-        ajc$tjp_1 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "getDescription", "com.coremedia.iso.boxes.DescriptionBox", "", "", "", "java.lang.String"), 44);
-        ajc$tjp_2 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "toString", "com.coremedia.iso.boxes.DescriptionBox", "", "", "", "java.lang.String"), 67);
-        ajc$tjp_3 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "setLanguage", "com.coremedia.iso.boxes.DescriptionBox", "java.lang.String", "language", "", "void"), 71);
-        ajc$tjp_4 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "setDescription", "com.coremedia.iso.boxes.DescriptionBox", "java.lang.String", PlusShare.KEY_CONTENT_DEEP_LINK_METADATA_DESCRIPTION, "", "void"), 75);
-    }
+
 
     public DescriptionBox() {
         super(TYPE);

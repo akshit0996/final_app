@@ -22,7 +22,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 import com.lema.android.heartbeatlistener.C0722R;
-import com.lema.android.heartbeatlistener.MainActivity;
+import com.project.heart.myapplication.MainActivity;
 import com.lema.android.heartbeatlistener.activities.HelpActivity;
 import com.lema.android.heartbeatlistener.sound.AudioStateManager;
 import com.lema.android.heartbeatlistener.sound.IAudioFunctions;
@@ -69,10 +69,8 @@ public class MainFragment extends Fragment {
         }
 
         public void onClick(View v) {
-            if (MainFragment.this.activity.recordingPlayerShowInterstitialAd.isLoaded() && MainFragment.this.shallDisplayInterstitial(v.getContext())) {
-                MainFragment.this.logAdDisplay(v.getContext());
-                MainFragment.this.activity.recordingPlayerShowInterstitialAd.show();
-            } else if (MainFragment.this.activity != null) {
+             if(MainFragment.this.activity != null)
+            {
                 MainFragment.this.activity.showRecordingFragment();
             }
         }
@@ -125,19 +123,19 @@ public class MainFragment extends Fragment {
             MainFragment.this.recordButton.setChecked(true);
         }
 
+        @Override
+        public void displayStopRecordAd() {
+
+        }
+
         public void startListenning() {
             MainFragment.this.listenButton.setChecked(true);
             MainFragment.this.mainImageFrame.start();
         }
 
-        public void displayStopRecordAd() {
-            if (MainFragment.this.activity.recordLaunchInterstitialAd.isLoaded() && MainFragment.this.shallDisplayInterstitial(MainFragment.this.getActivity())) {
-                MainFragment.this.logAdDisplay(MainFragment.this.getActivity());
-                MainFragment.this.activity.recordLaunchInterstitialAd.show();
 
-            }
         }
-    }
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

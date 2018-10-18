@@ -40,7 +40,7 @@ public final class Factory {
         prims.put("double", Double.TYPE);
     }
 
-    static Class makeClass(String s, ClassLoader loader) {
+    static Class makeClass(String s, ClassLoader loader) throws ClassNotFoundException {
         Class class$;
         if (s.equals("*")) {
             return null;
@@ -79,54 +79,54 @@ public final class Factory {
         this.lookupClassLoader = lexicalClass.getClassLoader();
     }
 
-    public StaticPart makeSJP(String kind, String modifiers, String methodName, String declaringType, String paramTypes, String paramNames, String exceptionTypes, String returnType, int l) {
+    public StaticPart makeSJP(String kind, String modifiers, String methodName, String declaringType, String paramTypes, String paramNames, String exceptionTypes, String returnType, int l) throws ClassNotFoundException {
         Signature sig = makeMethodSig(modifiers, methodName, declaringType, paramTypes, paramNames, exceptionTypes, returnType);
         int i = this.count;
         this.count = i + 1;
-        return new StaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
+        return new JoinPointImpl.StaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
     }
 
-    public StaticPart makeSJP(String kind, String modifiers, String methodName, String declaringType, String paramTypes, String paramNames, String returnType, int l) {
+    public StaticPart makeSJP(String kind, String modifiers, String methodName, String declaringType, String paramTypes, String paramNames, String returnType, int l) throws ClassNotFoundException {
         Signature sig = makeMethodSig(modifiers, methodName, declaringType, paramTypes, paramNames, "", returnType);
         int i = this.count;
         this.count = i + 1;
-        return new StaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
+        return new JoinPointImpl.StaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
     }
 
     public StaticPart makeSJP(String kind, Signature sig, SourceLocation loc) {
         int i = this.count;
         this.count = i + 1;
-        return new StaticPartImpl(i, kind, sig, loc);
+        return new JoinPointImpl.StaticPartImpl(i, kind, sig, loc);
     }
 
     public StaticPart makeSJP(String kind, Signature sig, int l, int c) {
         int i = this.count;
         this.count = i + 1;
-        return new StaticPartImpl(i, kind, sig, makeSourceLoc(l, c));
+        return new JoinPointImpl.StaticPartImpl(i, kind, sig, makeSourceLoc(l, c));
     }
 
     public StaticPart makeSJP(String kind, Signature sig, int l) {
         int i = this.count;
         this.count = i + 1;
-        return new StaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
+        return new JoinPointImpl.StaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
     }
 
     public EnclosingStaticPart makeESJP(String kind, Signature sig, SourceLocation loc) {
         int i = this.count;
         this.count = i + 1;
-        return new EnclosingStaticPartImpl(i, kind, sig, loc);
+        return new JoinPointImpl.EnclosingStaticPartImpl(i, kind, sig, loc);
     }
 
     public EnclosingStaticPart makeESJP(String kind, Signature sig, int l, int c) {
         int i = this.count;
         this.count = i + 1;
-        return new EnclosingStaticPartImpl(i, kind, sig, makeSourceLoc(l, c));
+        return new JoinPointImpl.EnclosingStaticPartImpl(i, kind, sig, makeSourceLoc(l, c));
     }
 
     public EnclosingStaticPart makeESJP(String kind, Signature sig, int l) {
         int i = this.count;
         this.count = i + 1;
-        return new EnclosingStaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
+        return new JoinPointImpl.EnclosingStaticPartImpl(i, kind, sig, makeSourceLoc(l, -1));
     }
 
     public static StaticPart makeEncSJP(Member member) {
@@ -143,7 +143,7 @@ public final class Factory {
         } else {
             throw new IllegalArgumentException("member must be either a method or constructor");
         }
-        return new EnclosingStaticPartImpl(-1, kind, sig, null);
+        return new JoinPointImpl.EnclosingStaticPartImpl(-1, kind, sig, null);
     }
 
     public static JoinPoint makeJP(StaticPart staticPart, Object _this, Object target) {
@@ -168,7 +168,7 @@ public final class Factory {
         return ret;
     }
 
-    public MethodSignature makeMethodSig(String modifiers, String methodName, String declaringType, String paramTypes, String paramNames, String exceptionTypes, String returnType) {
+    public MethodSignature makeMethodSig(String modifiers, String methodName, String declaringType, String paramTypes, String paramNames, String exceptionTypes, String returnType) throws ClassNotFoundException {
         int i;
         int modifiersAsInt = Integer.parseInt(modifiers, 16);
         Class declaringTypeClass = makeClass(declaringType, this.lookupClassLoader);
@@ -205,7 +205,7 @@ public final class Factory {
         return ret;
     }
 
-    public ConstructorSignature makeConstructorSig(String modifiers, String declaringType, String paramTypes, String paramNames, String exceptionTypes) {
+    public ConstructorSignature makeConstructorSig(String modifiers, String declaringType, String paramTypes, String paramNames, String exceptionTypes) throws ClassNotFoundException {
         int i;
         int modifiersAsInt = Integer.parseInt(modifiers, 16);
         Class declaringTypeClass = makeClass(declaringType, this.lookupClassLoader);
@@ -244,7 +244,7 @@ public final class Factory {
         return ret;
     }
 
-    public FieldSignature makeFieldSig(String modifiers, String name, String declaringType, String fieldType) {
+    public FieldSignature makeFieldSig(String modifiers, String name, String declaringType, String fieldType) throws ClassNotFoundException {
         FieldSignatureImpl ret = new FieldSignatureImpl(Integer.parseInt(modifiers, 16), name, makeClass(declaringType, this.lookupClassLoader), makeClass(fieldType, this.lookupClassLoader));
         ret.setLookupClassLoader(this.lookupClassLoader);
         return ret;
@@ -262,7 +262,7 @@ public final class Factory {
         return ret;
     }
 
-    public AdviceSignature makeAdviceSig(String modifiers, String name, String declaringType, String paramTypes, String paramNames, String exceptionTypes, String returnType) {
+    public AdviceSignature makeAdviceSig(String modifiers, String name, String declaringType, String paramTypes, String paramNames, String exceptionTypes, String returnType) throws ClassNotFoundException {
         int i;
         int modifiersAsInt = Integer.parseInt(modifiers, 16);
         Class declaringTypeClass = makeClass(declaringType, this.lookupClassLoader);
@@ -301,7 +301,7 @@ public final class Factory {
         return ret;
     }
 
-    public InitializerSignature makeInitializerSig(String modifiers, String declaringType) {
+    public InitializerSignature makeInitializerSig(String modifiers, String declaringType) throws ClassNotFoundException {
         InitializerSignatureImpl ret = new InitializerSignatureImpl(Integer.parseInt(modifiers, 16), makeClass(declaringType, this.lookupClassLoader));
         ret.setLookupClassLoader(this.lookupClassLoader);
         return ret;
@@ -319,7 +319,7 @@ public final class Factory {
         return ret;
     }
 
-    public CatchClauseSignature makeCatchClauseSig(String declaringType, String parameterType, String parameterName) {
+    public CatchClauseSignature makeCatchClauseSig(String declaringType, String parameterType, String parameterName) throws ClassNotFoundException {
         CatchClauseSignatureImpl ret = new CatchClauseSignatureImpl(makeClass(declaringType, this.lookupClassLoader), makeClass(new StringTokenizer(parameterType, ":").nextToken(), this.lookupClassLoader), new StringTokenizer(parameterName, ":").nextToken());
         ret.setLookupClassLoader(this.lookupClassLoader);
         return ret;
@@ -337,7 +337,7 @@ public final class Factory {
         return ret;
     }
 
-    public LockSignature makeLockSig() {
+    public LockSignature makeLockSig() throws ClassNotFoundException {
         LockSignatureImpl ret = new LockSignatureImpl(makeClass("Ljava/lang/Object;", this.lookupClassLoader));
         ret.setLookupClassLoader(this.lookupClassLoader);
         return ret;
@@ -355,7 +355,7 @@ public final class Factory {
         return ret;
     }
 
-    public UnlockSignature makeUnlockSig() {
+    public UnlockSignature makeUnlockSig() throws ClassNotFoundException {
         UnlockSignatureImpl ret = new UnlockSignatureImpl(makeClass("Ljava/lang/Object;", this.lookupClassLoader));
         ret.setLookupClassLoader(this.lookupClassLoader);
         return ret;

@@ -2,7 +2,7 @@ package com.coremedia.iso.boxes.dece;
 
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.google.android.gms.games.quest.Quests;
+
 import com.googlecode.mp4parser.AbstractFullBox;
 import com.googlecode.mp4parser.RequiresParseDetailAspect;
 import java.nio.ByteBuffer;
@@ -53,16 +53,6 @@ public class TrickPlayBox extends AbstractFullBox {
         }
     }
 
-    static {
-        ajc$preClinit();
-    }
-
-    private static /* synthetic */ void ajc$preClinit() {
-        Factory factory = new Factory("TrickPlayBox.java", TrickPlayBox.class);
-        ajc$tjp_0 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "setEntries", "com.coremedia.iso.boxes.dece.TrickPlayBox", "java.util.List", "entries", "", "void"), 32);
-        ajc$tjp_1 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "getEntries", "com.coremedia.iso.boxes.dece.TrickPlayBox", "", "", "", "java.util.List"), 36);
-        ajc$tjp_2 = factory.makeSJP(JoinPoint.METHOD_EXECUTION, factory.makeMethodSig("1", "toString", "com.coremedia.iso.boxes.dece.TrickPlayBox", "", "", "", "java.lang.String"), (int) Quests.SELECT_RECENTLY_FAILED);
-    }
 
     public TrickPlayBox() {
         super(TYPE);

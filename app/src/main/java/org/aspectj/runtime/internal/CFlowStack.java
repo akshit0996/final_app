@@ -45,7 +45,7 @@ public class CFlowStack {
         if (!stack.isEmpty()) {
             return stack.peek();
         }
-        throw new NoAspectBoundException();
+
     }
 
     public Object get(int index) {
@@ -58,7 +58,7 @@ public class CFlowStack {
         if (cf != null) {
             return cf.getAspect();
         }
-        throw new NoAspectBoundException();
+
     }
 
     public CFlow peekCFlow() {

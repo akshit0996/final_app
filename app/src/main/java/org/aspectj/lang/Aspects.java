@@ -14,7 +14,7 @@ public class Aspects {
 
     public static <T> T aspectOf(Class<T> aspectClass) throws NoAspectBoundException {
         try {
-            return getSingletonOrThreadAspectOf(aspectClass).invoke(null, EMPTY_OBJECT_ARRAY);
+            return (T) getSingletonOrThreadAspectOf(aspectClass).invoke(null, EMPTY_OBJECT_ARRAY);
         } catch (InvocationTargetException e) {
             throw new NoAspectBoundException(aspectClass.getName(), e);
         } catch (Exception e2) {
@@ -24,7 +24,7 @@ public class Aspects {
 
     public static <T> T aspectOf(Class<T> aspectClass, Object perObject) throws NoAspectBoundException {
         try {
-            return getPerObjectAspectOf(aspectClass).invoke(null, new Object[]{perObject});
+            return (T) getPerObjectAspectOf(aspectClass).invoke(null, new Object[]{perObject});
         } catch (InvocationTargetException e) {
             throw new NoAspectBoundException(aspectClass.getName(), e);
         } catch (Exception e2) {
@@ -34,7 +34,7 @@ public class Aspects {
 
     public static <T> T aspectOf(Class<T> aspectClass, Class<?> perTypeWithin) throws NoAspectBoundException {
         try {
-            return getPerTypeWithinAspectOf(aspectClass).invoke(null, new Object[]{perTypeWithin});
+            return (T) getPerTypeWithinAspectOf(aspectClass).invoke(null, new Object[]{perTypeWithin});
         } catch (InvocationTargetException e) {
             throw new NoAspectBoundException(aspectClass.getName(), e);
         } catch (Exception e2) {

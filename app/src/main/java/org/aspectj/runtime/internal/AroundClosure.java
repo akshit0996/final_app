@@ -27,13 +27,13 @@ public abstract class AroundClosure {
     }
 
     public ProceedingJoinPoint linkClosureAndJoinPoint() {
-        ProceedingJoinPoint jp = this.state[this.state.length - 1];
+        ProceedingJoinPoint jp = (ProceedingJoinPoint) this.state[this.state.length - 1];
         jp.set$AroundClosure(this);
         return jp;
     }
 
     public ProceedingJoinPoint linkClosureAndJoinPoint(int flags) {
-        ProceedingJoinPoint jp = this.state[this.state.length - 1];
+        ProceedingJoinPoint jp = (ProceedingJoinPoint) this.state[this.state.length - 1];
         jp.set$AroundClosure(this);
         this.bitflags = flags;
         return jp;

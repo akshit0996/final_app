@@ -7,7 +7,6 @@ import com.coremedia.iso.boxes.SampleDescriptionBox;
 import com.coremedia.iso.boxes.SoundMediaHeaderBox;
 import com.coremedia.iso.boxes.SubSampleInformationBox;
 import com.coremedia.iso.boxes.sampleentry.AudioSampleEntry;
-import com.google.android.gms.games.GamesStatusCodes;
 import com.googlecode.mp4parser.DataSource;
 import com.googlecode.mp4parser.authoring.AbstractTrack;
 import com.googlecode.mp4parser.authoring.Sample;
@@ -67,78 +66,6 @@ public class AACTrackImpl extends AbstractTrack {
         int getSize() {
             return (this.protectionAbsent == 0 ? 2 : 0) + 7;
         }
-    }
-
-    static {
-        audioObjectTypes.put(Integer.valueOf(1), "AAC Main");
-        audioObjectTypes.put(Integer.valueOf(2), "AAC LC (Low Complexity)");
-        audioObjectTypes.put(Integer.valueOf(3), "AAC SSR (Scalable Sample Rate)");
-        audioObjectTypes.put(Integer.valueOf(4), "AAC LTP (Long Term Prediction)");
-        audioObjectTypes.put(Integer.valueOf(5), "SBR (Spectral Band Replication)");
-        audioObjectTypes.put(Integer.valueOf(6), "AAC Scalable");
-        audioObjectTypes.put(Integer.valueOf(7), "TwinVQ");
-        audioObjectTypes.put(Integer.valueOf(8), "CELP (Code Excited Linear Prediction)");
-        audioObjectTypes.put(Integer.valueOf(9), "HXVC (Harmonic Vector eXcitation Coding)");
-        audioObjectTypes.put(Integer.valueOf(10), "Reserved");
-        audioObjectTypes.put(Integer.valueOf(11), "Reserved");
-        audioObjectTypes.put(Integer.valueOf(12), "TTSI (Text-To-Speech Interface)");
-        audioObjectTypes.put(Integer.valueOf(13), "Main Synthesis");
-        audioObjectTypes.put(Integer.valueOf(14), "Wavetable Synthesis");
-        audioObjectTypes.put(Integer.valueOf(15), "General MIDI");
-        audioObjectTypes.put(Integer.valueOf(16), "Algorithmic Synthesis and Audio Effects");
-        audioObjectTypes.put(Integer.valueOf(17), "ER (Error Resilient) AAC LC");
-        audioObjectTypes.put(Integer.valueOf(18), "Reserved");
-        audioObjectTypes.put(Integer.valueOf(19), "ER AAC LTP");
-        audioObjectTypes.put(Integer.valueOf(20), "ER AAC Scalable");
-        audioObjectTypes.put(Integer.valueOf(21), "ER TwinVQ");
-        audioObjectTypes.put(Integer.valueOf(22), "ER BSAC (Bit-Sliced Arithmetic Coding)");
-        audioObjectTypes.put(Integer.valueOf(23), "ER AAC LD (Low Delay)");
-        audioObjectTypes.put(Integer.valueOf(24), "ER CELP");
-        audioObjectTypes.put(Integer.valueOf(25), "ER HVXC");
-        audioObjectTypes.put(Integer.valueOf(26), "ER HILN (Harmonic and Individual Lines plus Noise)");
-        audioObjectTypes.put(Integer.valueOf(27), "ER Parametric");
-        audioObjectTypes.put(Integer.valueOf(28), "SSC (SinuSoidal Coding)");
-        audioObjectTypes.put(Integer.valueOf(29), "PS (Parametric Stereo)");
-        audioObjectTypes.put(Integer.valueOf(30), "MPEG Surround");
-        audioObjectTypes.put(Integer.valueOf(31), "(Escape value)");
-        audioObjectTypes.put(Integer.valueOf(32), "Layer-1");
-        audioObjectTypes.put(Integer.valueOf(33), "Layer-2");
-        audioObjectTypes.put(Integer.valueOf(34), "Layer-3");
-        audioObjectTypes.put(Integer.valueOf(35), "DST (Direct Stream Transfer)");
-        audioObjectTypes.put(Integer.valueOf(36), "ALS (Audio Lossless)");
-        audioObjectTypes.put(Integer.valueOf(37), "SLS (Scalable LosslesS)");
-        audioObjectTypes.put(Integer.valueOf(38), "SLS non-core");
-        audioObjectTypes.put(Integer.valueOf(39), "ER AAC ELD (Enhanced Low Delay)");
-        audioObjectTypes.put(Integer.valueOf(40), "SMR (Symbolic Music Representation) Simple");
-        audioObjectTypes.put(Integer.valueOf(41), "SMR Main");
-        audioObjectTypes.put(Integer.valueOf(42), "USAC (Unified Speech and Audio Coding) (no SBR)");
-        audioObjectTypes.put(Integer.valueOf(43), "SAOC (Spatial Audio Object Coding)");
-        audioObjectTypes.put(Integer.valueOf(44), "LD MPEG Surround");
-        audioObjectTypes.put(Integer.valueOf(45), "USAC");
-        samplingFrequencyIndexMap.put(Integer.valueOf(96000), Integer.valueOf(0));
-        samplingFrequencyIndexMap.put(Integer.valueOf(88200), Integer.valueOf(1));
-        samplingFrequencyIndexMap.put(Integer.valueOf(VideoCreator.COMPRESSED_AUDIO_FILE_BIT_RATE), Integer.valueOf(2));
-        samplingFrequencyIndexMap.put(Integer.valueOf(VideoCreator.BUFFER_SIZE), Integer.valueOf(3));
-        samplingFrequencyIndexMap.put(Integer.valueOf(SoundManager.REF_SAMPLE_RATE), Integer.valueOf(4));
-        samplingFrequencyIndexMap.put(Integer.valueOf(32000), Integer.valueOf(5));
-        samplingFrequencyIndexMap.put(Integer.valueOf(24000), Integer.valueOf(6));
-        samplingFrequencyIndexMap.put(Integer.valueOf(22050), Integer.valueOf(7));
-        samplingFrequencyIndexMap.put(Integer.valueOf(16000), Integer.valueOf(8));
-        samplingFrequencyIndexMap.put(Integer.valueOf(12000), Integer.valueOf(9));
-        samplingFrequencyIndexMap.put(Integer.valueOf(11025), Integer.valueOf(10));
-        samplingFrequencyIndexMap.put(Integer.valueOf(GamesStatusCodes.STATUS_MILESTONE_CLAIMED_PREVIOUSLY), Integer.valueOf(11));
-        samplingFrequencyIndexMap.put(Integer.valueOf(0), Integer.valueOf(96000));
-        samplingFrequencyIndexMap.put(Integer.valueOf(1), Integer.valueOf(88200));
-        samplingFrequencyIndexMap.put(Integer.valueOf(2), Integer.valueOf(VideoCreator.COMPRESSED_AUDIO_FILE_BIT_RATE));
-        samplingFrequencyIndexMap.put(Integer.valueOf(3), Integer.valueOf(VideoCreator.BUFFER_SIZE));
-        samplingFrequencyIndexMap.put(Integer.valueOf(4), Integer.valueOf(SoundManager.REF_SAMPLE_RATE));
-        samplingFrequencyIndexMap.put(Integer.valueOf(5), Integer.valueOf(32000));
-        samplingFrequencyIndexMap.put(Integer.valueOf(6), Integer.valueOf(24000));
-        samplingFrequencyIndexMap.put(Integer.valueOf(7), Integer.valueOf(22050));
-        samplingFrequencyIndexMap.put(Integer.valueOf(8), Integer.valueOf(16000));
-        samplingFrequencyIndexMap.put(Integer.valueOf(9), Integer.valueOf(12000));
-        samplingFrequencyIndexMap.put(Integer.valueOf(10), Integer.valueOf(11025));
-        samplingFrequencyIndexMap.put(Integer.valueOf(11), Integer.valueOf(GamesStatusCodes.STATUS_MILESTONE_CLAIMED_PREVIOUSLY));
     }
 
     public AACTrackImpl(DataSource channel, String lang) throws IOException {

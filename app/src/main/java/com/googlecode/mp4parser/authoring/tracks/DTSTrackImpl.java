@@ -7,7 +7,6 @@ import com.coremedia.iso.boxes.SampleDependencyTypeBox;
 import com.coremedia.iso.boxes.SampleDescriptionBox;
 import com.coremedia.iso.boxes.SoundMediaHeaderBox;
 import com.coremedia.iso.boxes.sampleentry.AudioSampleEntry;
-import com.google.android.gms.games.GamesStatusCodes;
 import com.googlecode.mp4parser.DataSource;
 import com.googlecode.mp4parser.authoring.AbstractTrack;
 import com.googlecode.mp4parser.authoring.Sample;
@@ -249,9 +248,12 @@ public class DTSTrackImpl extends AbstractTrack {
                 testHeader1 = bb.getInt();
                 testHeader2 = bb.getInt();
             }
+
+
         }
-        bb.getLong();
+        bb.getShort();
         this.dataOffset = bb.position();
+
         int amode = -1;
         int extAudioId = 0;
         int extAudio = 0;
@@ -265,6 +267,7 @@ public class DTSTrackImpl extends AbstractTrack {
         int extXll = 0;
         int extCore = 0;
         boolean done = false;
+
         while (!done) {
             int offset = bb.position();
             int sync = bb.getInt();
@@ -287,7 +290,7 @@ public class DTSTrackImpl extends AbstractTrack {
                     amode = brb.readBits(6);
                     switch (brb.readBits(4)) {
                         case 1:
-                            this.samplerate = GamesStatusCodes.STATUS_MILESTONE_CLAIMED_PREVIOUSLY;
+                            this.samplerate = 1;
                             break;
                         case 2:
                             this.samplerate = 16000;
