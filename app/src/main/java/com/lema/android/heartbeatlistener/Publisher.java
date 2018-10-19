@@ -22,7 +22,7 @@ import java.io.OutputStream;
 public class Publisher {
 
     /* renamed from: com.lema.android.heartbeatlistener.Publisher$1 */
-    class C07181 implements OnClickListener {
+    static class C07181 implements OnClickListener {
         private final /* synthetic */ Context val$ctxt;
         private final /* synthetic */ String val$inputAudioFilePath;
         private final /* synthetic */ SharedPreferences val$preferences;
@@ -42,7 +42,7 @@ public class Publisher {
     }
 
     /* renamed from: com.lema.android.heartbeatlistener.Publisher$2 */
-    class C07192 implements OnClickListener {
+    static class C07192 implements OnClickListener {
         C07192() {
         }
 
@@ -51,7 +51,7 @@ public class Publisher {
     }
 
     /* renamed from: com.lema.android.heartbeatlistener.Publisher$3 */
-    class C07203 implements OnClickListener {
+    static class C07203 implements OnClickListener {
         private final /* synthetic */ Context val$ctxt;
         private final /* synthetic */ String val$inputAudioFilePath;
 
@@ -66,7 +66,7 @@ public class Publisher {
     }
 
     /* renamed from: com.lema.android.heartbeatlistener.Publisher$4 */
-    class C07214 implements OnClickListener {
+    static class C07214 implements OnClickListener {
         C07214() {
         }
 

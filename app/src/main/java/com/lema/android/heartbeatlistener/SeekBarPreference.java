@@ -83,8 +83,8 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
                 if (oldContainer != null) {
                     ((ViewGroup) oldContainer).removeView(this.mSeekBar);
                 }
-                newContainer.removeAllViews();
-                newContainer.addView(this.mSeekBar, -1, -2);
+                ((ViewGroup) newContainer).removeAllViews();
+                ((ViewGroup) newContainer).addView(this.mSeekBar, -1, -2);
             }
         } catch (Exception ex) {
             Log.e(this.TAG, "Error binding view: " + ex.toString());

@@ -172,13 +172,13 @@ public class AudioRecorderManager {
     public static String getHourFromFileName(String fileName) {
         return fileName.substring(fileName.lastIndexOf("_") + 1, fileName.length() - 4);
     }
-    /*
+
     public RecordsAdapter getRecordAdapterInstance(Context context) {
         File[] fileList = getRecordsFile(context).listFiles();
         TreeSet<File> fileSet = new TreeSet(new C07391());
-        for (Object add : fileList) {
-            fileSet.add();
+        for (File add : fileList) {
+            fileSet.add(add);
         }
         return new RecordsAdapter(context, new ArrayList(fileSet));
-    }*/
+    }
 }

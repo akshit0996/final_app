@@ -5,11 +5,11 @@ public class PolynomialRootFinderJenkinsTraub {
     private static class GlobalEnvironment {
         private static final double are = 2.22E-16d;
         private static final double base = 2.0d;
+        private static final double rotationAngle = 1.6406094968746698d;
         private static final double cosr = Math.cos(rotationAngle);
         private static final double eta = 2.22E-16d;
         private static final double infin = 3.4028234663852886E38d;
         private static final double mre = 2.22E-16d;
-        private static final double rotationAngle = 1.6406094968746698d;
         private static final double rotationAngleDeg = 94.0d;
         private static final double sinr = Math.sin(rotationAngle);
         private static final double smalno = 1.1754943508222875E-38d;
@@ -548,7 +548,7 @@ public class PolynomialRootFinderJenkinsTraub {
             double c4 = (((this.f84v * b2) * this.a1) - c2) - c3;
             double temp = ((b1 * a4) + a5) - c4;
             if (temp == 0.0d) {
-                dArr = new double[2];
+                double[] dArr = new double[2];
                 return new double[]{0.0d, 0.0d};
             }
             double uu = this.f83u - (((this.f83u * (c3 + c2)) + (this.f84v * ((this.a1 * b1) + (this.a7 * b2)))) / temp);
