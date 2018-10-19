@@ -4,8 +4,8 @@ import com.lema.android.heartbeatlistener.sound.signal.Buffer;
 
 public class RIF {
     /* renamed from: M */
-    private final int f62N;
-    private final int f61M = ((this.f62N * 2) + 1);
+    private  int f62N=0;
+    private  int f61M = ((this.f62N * 2) + 1);
     /* renamed from: N */
 
     float[] coef = new float[this.f61M];

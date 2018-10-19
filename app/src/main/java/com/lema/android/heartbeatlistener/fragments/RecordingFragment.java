@@ -54,7 +54,11 @@ public class RecordingFragment extends Fragment {
 
         public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
             RecordingFragment.this.currentSoundFilePath = ((File) RecordingFragment.this.adapter.getItem(position)).getAbsolutePath();
-            RecordingFragment.this.playSong(RecordingFragment.this.currentSoundFilePath);
+            try {
+                RecordingFragment.this.playSong(RecordingFragment.this.currentSoundFilePath);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
         }
     }
 
@@ -168,7 +172,7 @@ public class RecordingFragment extends Fragment {
         return rootView;
     }
 
-    private void playSong(String songPath) {
+    private void playSong(String songPath) throws Throwable {
         Throwable th;
         try {
             this.mp.reset();
