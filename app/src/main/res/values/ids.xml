@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="home" />
+    <item type="id" name="action_bar_activity_content" />
+    <item type="id" name="action_menu_divider" />
+    <item type="id" name="action_menu_presenter" />
+    <item type="id" name="progress_circular" />
+    <item type="id" name="progress_horizontal" />
+    <item type="id" name="action_bar_root"/>
+    <item type="id" name="action_bar_container"/>
+    <item type="id" name="action_bar"/>
+    <item type="id" name="action_context_bar"/>
+    <item type="id" name="split_action_bar"/>
+    <item type="id" name="action_bar_overlay_layout"/>
+    <item type="id" name="top_action_bar"/>
+    <item type="id" name="up"/>
+    <item type="id" name="action_bar_title"/>
+    <item type="id" name="action_bar_subtitle"/>
+    <item type="id" name="action_mode_close_button"/>
+    <item type="id" name="activity_chooser_view_content"/>
+    <item type="id" name="expand_activities_button"/>
+    <item type="id" name="image"/>
+    <item type="id" name="default_activity_button"/>
+    <item type="id" name="list_item"/>
+    <item type="id" name="icon"/>
+    <item type="id" name="title"/>
+    <item type="id" name="expanded_menu"/>
+    <item type="id" name="checkbox"/>
+    <item type="id" name="shortcut"/>
+    <item type="id" name="radio"/>
+    <item type="id" name="edit_query"/>
+    <item type="id" name="search_bar"/>
+    <item type="id" name="search_badge"/>
+    <item type="id" name="search_button"/>
+    <item type="id" name="search_edit_frame"/>
+    <item type="id" name="search_mag_icon"/>
+    <item type="id" name="search_plate"/>
+    <item type="id" name="search_src_text"/>
+    <item type="id" name="search_close_btn"/>
+    <item type="id" name="submit_area"/>
+    <item type="id" name="search_go_btn"/>
+    <item type="id" name="search_voice_btn"/>
+    <item type="id" name="helpTitle1"/>
+    <item type="id" name="helpExpandableListView"/>
+    <item type="id" name="testHeadPhoneBlock"/>
+    <item type="id" name="helpTitle2"/>
+    <item type="id" name="help_play_button"/>
+    <item type="id" name="helpAudioTestDesc"/>
+    <item type="id" name="linearLayoutMain"/>
+    <item type="id" name="adLayout"/>
+    <item type="id" name="container"/>
+    <item type="id" name="playToggleButton"/>
+    <item type="id" name="playerProgressBar"/>
+    <item type="id" name="shareButton"/>
+    <item type="id" name="recordsList"/>
+    <item type="id" name="main_page_help"/>
+    <item type="id" name="main_animated_image"/>
+    <item type="id" name="listenToggleButton"/>
+    <item type="id" name="recordToggleButton"/>
+    <item type="id" name="replay_activity_button"/>
+    <item type="id" name="helpListViewContentText"/>
+    <item type="id" name="helpListViewHeaderText"/>
+    <item type="id" name="record_item_title"/>
+    <item type="id" name="record_item_duration"/>
+    <item type="id" name="record_item_trash_button"/>
+    <item type="id" name="seekBarPrefUnitsRight"/>
+    <item type="id" name="seekBarPrefValue"/>
+    <item type="id" name="seekBarPrefUnitsLeft"/>
+    <item type="id" name="seekBarPrefBarContainer"/>
+    <item type="id" name="seekBarPrefSeekBar"/>
+    <item type="id" name="action_settings"/>
+    <item type="id" name="action_help"/>
+</resources>
