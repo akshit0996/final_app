@@ -147,18 +147,18 @@ public class MainFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(C0722R.layout.fragment_main, container, false);
-        ImageView animated_image = (ImageView) rootView.findViewById(C0722R.id.main_animated_image);
-        animated_image.setBackgroundResource(C0722R.drawable.pregnant_animation);
-        this.mainImageFrame = (AnimationDrawable) animated_image.getBackground();
+        //ImageView animated_image = (ImageView) rootView.findViewById(C0722R.id.main_animated_image);
+       // animated_image.setBackgroundResource(C0722R.drawable.pregnant_animation);
+       // this.mainImageFrame = (AnimationDrawable) animated_image.getBackground();
         this.listenButton = (ToggleButton) rootView.findViewById(C0722R.id.listenToggleButton);
         this.listenButton.setChecked(AudioStateManager.getInstance().isListenning());
         this.listenButton.setOnCheckedChangeListener(new C07241());
         this.recordButton = (ToggleButton) rootView.findViewById(C0722R.id.recordToggleButton);
         this.recordButton.setChecked(AudioStateManager.getInstance().isRecording());
         this.recordButton.setOnCheckedChangeListener(new C07252());
-        ((Button) rootView.findViewById(C0722R.id.replay_activity_button)).setOnClickListener(new C07263());
-        this.helpIcon = (ImageView) rootView.findViewById(C0722R.id.main_page_help);
-        this.helpIcon.setOnClickListener(new C07274());
+      //  ((Button) rootView.findViewById(C0722R.id.replay_activity_button)).setOnClickListener(new C07263());
+       // this.helpIcon = (ImageView) rootView.findViewById(C0722R.id.main_page_help);
+       // this.helpIcon.setOnClickListener(new C07274());
         AudioStateManager.getInstance().setAudioFunction(new C12845());
         requestForRating(getActivity());
         return rootView;
