@@ -345,7 +345,7 @@
         <item name="isLightTheme">true</item>
         <item name="searchDropdownBackground">@drawable/abc_search_dropdown_light</item>
         <item name="searchViewCloseIcon">@drawable/abc_ic_clear_holo_light</item>
-        <item name="searchViewGoIcon">@drawable/abc_ic_go_search_api_holo_light</item>
+        <item name="c">@drawable/abc_ic_go_search_api_holo_light</item>
         <item name="searchViewSearchIcon">@drawable/abc_ic_search_api_holo_light</item>
         <item name="searchViewVoiceIcon">@drawable/abc_ic_voice_search_api_holo_light</item>
         <item name="searchViewEditQuery">@drawable/abc_ic_commit_search_api_holo_light</item>
