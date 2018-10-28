@@ -20,11 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView((int) C0722R.layout.activity_main);
+            setContentView(R.layout.activity_main);
 
-            if (savedInstanceState == null) {
-                getSupportFragmentManager().beginTransaction().add((int) C0722R.id.container, new MainFragment()).commit();
-            }
+
              }
 
 
@@ -37,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
             transaction.commitAllowingStateLoss();
         }
 
-        public boolean onCreateOptionsMenu(Menu menu) {
+        /*public boolean onCreateOptionsMenu(Menu menu) {
             getMenuInflater().inflate(C0722R.menu.main, menu);
             return true;
-        }
+        }*/
 
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
