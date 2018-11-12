@@ -1,8 +1,7 @@
 package com.lema.android.heartbeatlistener.sound.signal.filter.dsp.math;
 
 public final class Complex {
-    /* renamed from: I */
-    public static final Complex f71I = new Complex(0.0d, 1.0d);
+    public static final Complex I = new Complex(0.0d, 1.0d);
     public static final Complex INF = new Complex(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
     public static final Complex NaN = new Complex(Double.NaN, Double.NaN);
     public static final Complex ONE = new Complex(1.0d);

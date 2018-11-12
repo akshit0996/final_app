@@ -3,8 +3,7 @@ package com.lema.android.heartbeatlistener.sound.signal.filter.dsp.signal;
 import com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.IntArray;
 
 public class ActivityDetector {
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$signal$ActivityDetector$SegmentType */
-    private static /* synthetic */ int[] f85x75f741b2;
+    private static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$signal$ActivityDetector$SegmentType;
     private IntArray activeZones;
     private int minActivityLen;
     private int minSilenceLen;
@@ -18,9 +17,8 @@ public class ActivityDetector {
         undef
     }
 
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$signal$ActivityDetector$SegmentType */
-    static /* synthetic */ int[] m2339x75f741b2() {
-        int[] iArr = f85x75f741b2;
+    static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$signal$ActivityDetector$SegmentType() {
+        int[] iArr = $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$signal$ActivityDetector$SegmentType;
         if (iArr == null) {
             iArr = new int[SegmentType.values().length];
             try {
@@ -35,7 +33,7 @@ public class ActivityDetector {
                 iArr[SegmentType.undef.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
-            f85x75f741b2 = iArr;
+            $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$signal$ActivityDetector$SegmentType = iArr;
         }
         return iArr;
     }
@@ -54,7 +52,7 @@ public class ActivityDetector {
         int undefStartPos = -1;
         while (this.pos < signalEnvelope.length) {
             int segmentStartPos = this.pos;
-            switch (m2339x75f741b2()[scanSegment().ordinal()]) {
+            switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$signal$ActivityDetector$SegmentType()[scanSegment().ordinal()]) {
                 case 1:
                     if (activeStartPos == -1) {
                         if (undefStartPos != -1) {

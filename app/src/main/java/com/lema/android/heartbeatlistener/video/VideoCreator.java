@@ -17,7 +17,7 @@ import com.googlecode.mp4parser.authoring.Movie;
 import com.googlecode.mp4parser.authoring.Track;
 import com.googlecode.mp4parser.authoring.builder.DefaultMp4Builder;
 import com.googlecode.mp4parser.authoring.container.mp4.MovieCreator;
-import com.lema.android.heartbeatlistener.C0722R;
+import com.lema.android.heartbeatlistener.R;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -97,7 +97,7 @@ public class VideoCreator extends AsyncTask<Void, Void, Void> {
     }
 
     private void copyVideoBaseFile() throws IOException {
-        InputStream in = this.ctxt.getResources().openRawResource(C0722R.raw.video_base);
+        InputStream in = this.ctxt.getResources().openRawResource(R.raw.video_base);
         FileOutputStream out = new FileOutputStream(this.InputVideoFilePath);
         byte[] buff = new byte[1024];
         while (true) {
@@ -126,7 +126,7 @@ public class VideoCreator extends AsyncTask<Void, Void, Void> {
 
     protected void onPreExecute() {
         this.dialog = new ProgressDialog(this.ctxt);
-        this.dialog.setMessage(this.ctxt.getResources().getText(C0722R.string.video_generating_progress_text));
+        this.dialog.setMessage(this.ctxt.getResources().getText(R.string.video_generating_progress_text));
         this.dialog.setCancelable(false);
         this.dialog.show();
         this.workingDirectory = new StringBuilder(String.valueOf(Environment.getExternalStorageDirectory().getAbsolutePath())).append("/").append(ConvertorDirectory).append("/").toString();
@@ -242,7 +242,7 @@ public class VideoCreator extends AsyncTask<Void, Void, Void> {
         Uri videoUri = Uri.parse("file://" + this.OutputCreatedVideoFilePath);
         sharingIntent.setType("video/*");
         sharingIntent.putExtra("android.intent.extra.STREAM", videoUri);
-        this.ctxt.startActivity(Intent.createChooser(sharingIntent, this.ctxt.getResources().getString(C0722R.string.share_video_message)));
+        this.ctxt.startActivity(Intent.createChooser(sharingIntent, this.ctxt.getResources().getString(R.string.share_video_message)));
     }
 
     private static void delete(File file) throws IOException {

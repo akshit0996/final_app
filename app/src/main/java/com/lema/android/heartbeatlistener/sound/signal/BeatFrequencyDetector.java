@@ -9,8 +9,7 @@ import java.util.TreeSet;
 
 public class BeatFrequencyDetector {
     protected final int EVENT_LOG_SIZE = 20;
-    /* renamed from: N */
-    protected int f60N;
+    protected int N;
     protected final int WINDOW_BUFFER_SIZE = 512;
     protected final double WINDOW_REAL_DURATION;
     protected final double WINDOW_TIME_LENGTH = 10.0d;
@@ -33,9 +32,9 @@ public class BeatFrequencyDetector {
 
     public BeatFrequencyDetector(double samplingFrequency) {
         this.samplingFrequency = samplingFrequency;
-        this.f60N = (int) (0.01f * ((float) samplingFrequency));
-        this.WINDOW_REAL_DURATION = ((double) this.f60N) / samplingFrequency;
-        this.previousData = new float[this.f60N];
+        this.N = (int) (0.01f * ((float) samplingFrequency));
+        this.WINDOW_REAL_DURATION = ((double) this.N) / samplingFrequency;
+        this.previousData = new float[this.N];
         this.previousWindowData = new double[512];
         this.previousDataUsedSize = 0;
         this.eventTimeLog = new LinkedList();
@@ -58,7 +57,7 @@ public class BeatFrequencyDetector {
     public void treatData(short[] buffer, int bufferSize) {
         int i;
         float sum = 0.0f;
-        int windowDataMaxSize = (this.previousDataUsedSize + bufferSize) / this.f60N;
+        int windowDataMaxSize = (this.previousDataUsedSize + bufferSize) / this.N;
         float[] windowData = new float[windowDataMaxSize];
         for (i = 0; i < this.previousDataUsedSize; i++) {
             sum += Math.abs(this.previousData[i]);
@@ -70,7 +69,7 @@ public class BeatFrequencyDetector {
             sum += (float) Math.abs(buffer[i]);
             k++;
             i++;
-            if (k >= this.f60N) {
+            if (k >= this.N) {
                 windowData[j] = sum / ((float) (k + 1));
                 k = 0;
                 j++;

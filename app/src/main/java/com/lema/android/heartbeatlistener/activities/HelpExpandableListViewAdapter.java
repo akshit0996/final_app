@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
-import com.lema.android.heartbeatlistener.C0722R;
+import com.lema.android.heartbeatlistener.R;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,9 +32,9 @@ public class HelpExpandableListViewAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         String childText = (String) getChild(groupPosition, childPosition);
         if (convertView == null) {
-            convertView = ((LayoutInflater) this._context.getSystemService("layout_inflater")).inflate(C0722R.layout.help_listview_content, null);
+            convertView = ((LayoutInflater) this._context.getSystemService("layout_inflater")).inflate(R.layout.help_listview_content, null);
         }
-        ((TextView) convertView.findViewById(C0722R.id.helpListViewContentText)).setText(childText);
+        ((TextView) convertView.findViewById(R.id.helpListViewContentText)).setText(childText);
         return convertView;
     }
 
@@ -57,9 +57,9 @@ public class HelpExpandableListViewAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         String headerTitle = (String) getGroup(groupPosition);
         if (convertView == null) {
-            convertView = ((LayoutInflater) this._context.getSystemService("layout_inflater")).inflate(C0722R.layout.help_listview_header, null);
+            convertView = ((LayoutInflater) this._context.getSystemService("layout_inflater")).inflate(R.layout.help_listview_header, null);
         }
-        TextView lblListHeader = (TextView) convertView.findViewById(C0722R.id.helpListViewHeaderText);
+        TextView lblListHeader = (TextView) convertView.findViewById(R.id.helpListViewHeaderText);
         lblListHeader.setTypeface(null, 1);
         lblListHeader.setText(headerTitle);
         return convertView;

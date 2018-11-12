@@ -1,9 +1,7 @@
 package com.lema.android.heartbeatlistener;
 
-/* renamed from: com.lema.android.heartbeatlistener.R */
-public final class C0722R {
+public final class R {
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$anim */
     public static final class anim {
         public static final int abc_fade_in = 2130968576;
         public static final int abc_fade_out = 2130968577;
@@ -13,7 +11,6 @@ public final class C0722R {
         public static final int abc_slide_out_top = 2130968581;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$attr */
     public static final class attr {
         public static final int actionBarDivider = 2130771983;
         public static final int actionBarItemBackground = 2130771984;
@@ -164,7 +161,6 @@ public final class C0722R {
         public static final int zOrderOnTop = 2130772098;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$bool */
     public static final class bool {
         public static final int abc_action_bar_embed_tabs_pre_jb = 2131230720;
         public static final int abc_action_bar_expanded_action_views_exclusive = 2131230721;
@@ -174,7 +170,6 @@ public final class C0722R {
         public static final int abc_split_action_bar_is_narrow = 2131230722;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$color */
     public static final class color {
         public static final int abc_search_url_text_holo = 2131296282;
         public static final int abc_search_url_text_normal = 2131296256;
@@ -209,7 +204,6 @@ public final class C0722R {
         public static final int wallet_secondary_text_holo_dark = 2131296286;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$dimen */
     public static final class dimen {
         public static final int abc_action_bar_default_height = 2131361794;
         public static final int abc_action_bar_icon_vertical_padding = 2131361795;
@@ -238,7 +232,6 @@ public final class C0722R {
         public static final int dialog_fixed_width_minor = 2131361810;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$drawable */
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo = 2130837504;
         public static final int abc_ab_bottom_solid_light_holo = 2130837505;
@@ -384,7 +377,6 @@ public final class C0722R {
         public static final int trash_button = 2130837645;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$id */
     public static final class id {
         public static final int action_bar = 2131165233;
         public static final int action_bar_activity_content = 2131165205;
@@ -499,13 +491,11 @@ public final class C0722R {
         public static final int wrap_content = 2131165223;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$integer */
     public static final class integer {
         public static final int abc_max_action_buttons = 2131427328;
         public static final int google_play_services_version = 2131427329;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$layout */
     public static final class layout {
         public static final int abc_action_bar_decor = 2130903040;
         public static final int abc_action_bar_decor_include = 2130903041;
@@ -543,20 +533,17 @@ public final class C0722R {
         public static final int support_simple_spinner_dropdown_item = 2130903073;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$menu */
     public static final class menu {
         public static final int main = 2131623936;
         public static final int main_activity_rem = 2131623937;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$raw */
     public static final class raw {
         public static final int gtm_analytics = 2131099648;
         public static final int heartbeat_sample = 2131099649;
         public static final int video_base = 2131099650;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$string */
     public static final class string {
         public static final int abc_action_bar_home_description = 2131492865;
         public static final int abc_action_bar_up_description = 2131492866;
@@ -592,8 +579,7 @@ public final class C0722R {
         public static final int common_google_play_services_needs_enabling_title = 2131492887;
         public static final int common_google_play_services_network_error_text = 2131492901;
         public static final int common_google_play_services_network_error_title = 2131492900;
-        /* renamed from: common_google_play_services_notification_needs_installation_title */
-        public static final int f59x8f024ee1 = 2131492884;
+        public static final int common_google_play_services_notification_needs_installation_title = 2131492884;
         public static final int common_google_play_services_notification_needs_update_title = 2131492885;
         public static final int common_google_play_services_notification_ticker = 2131492883;
         public static final int common_google_play_services_unknown_issue = 2131492904;
@@ -673,7 +659,6 @@ public final class C0722R {
         public static final int yes_message = 2131492935;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$style */
     public static final class style {
         public static final int AppBaseTheme = 2131558544;
         public static final int AppTheme = 2131558545;
@@ -823,12 +808,11 @@ public final class C0722R {
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131558434;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$styleable */
     public static final class styleable {
-        public static final int[] ActionBar = new int[]{C0722R.attr.title, C0722R.attr.height, C0722R.attr.navigationMode, C0722R.attr.displayOptions, C0722R.attr.subtitle, C0722R.attr.titleTextStyle, C0722R.attr.subtitleTextStyle, C0722R.attr.icon, C0722R.attr.logo, C0722R.attr.divider, C0722R.attr.background, C0722R.attr.backgroundStacked, C0722R.attr.backgroundSplit, C0722R.attr.customNavigationLayout, C0722R.attr.homeLayout, C0722R.attr.progressBarStyle, C0722R.attr.indeterminateProgressStyle, C0722R.attr.progressBarPadding, C0722R.attr.itemPadding};
+        public static final int[] ActionBar = new int[]{R.attr.title, R.attr.height, R.attr.navigationMode, R.attr.displayOptions, R.attr.subtitle, R.attr.titleTextStyle, R.attr.subtitleTextStyle, R.attr.icon, R.attr.logo, R.attr.divider, R.attr.background, R.attr.backgroundStacked, R.attr.backgroundSplit, R.attr.customNavigationLayout, R.attr.homeLayout, R.attr.progressBarStyle, R.attr.indeterminateProgressStyle, R.attr.progressBarPadding, R.attr.itemPadding};
         public static final int[] ActionBarLayout = new int[]{16842931};
         public static final int ActionBarLayout_android_layout_gravity = 0;
-        public static final int[] ActionBarWindow = new int[]{C0722R.attr.windowActionBar, C0722R.attr.windowActionBarOverlay, C0722R.attr.windowSplitActionBar, C0722R.attr.windowFixedWidthMajor, C0722R.attr.windowFixedHeightMinor, C0722R.attr.windowFixedWidthMinor, C0722R.attr.windowFixedHeightMajor};
+        public static final int[] ActionBarWindow = new int[]{R.attr.windowActionBar, R.attr.windowActionBarOverlay, R.attr.windowSplitActionBar, R.attr.windowFixedWidthMajor, R.attr.windowFixedHeightMinor, R.attr.windowFixedWidthMinor, R.attr.windowFixedHeightMajor};
         public static final int ActionBarWindow_windowActionBar = 0;
         public static final int ActionBarWindow_windowActionBarOverlay = 1;
         public static final int ActionBarWindow_windowFixedHeightMajor = 6;
@@ -858,30 +842,30 @@ public final class C0722R {
         public static final int[] ActionMenuItemView = new int[]{16843071};
         public static final int ActionMenuItemView_android_minWidth = 0;
         public static final int[] ActionMenuView = new int[0];
-        public static final int[] ActionMode = new int[]{C0722R.attr.height, C0722R.attr.titleTextStyle, C0722R.attr.subtitleTextStyle, C0722R.attr.background, C0722R.attr.backgroundSplit};
+        public static final int[] ActionMode = new int[]{R.attr.height, R.attr.titleTextStyle, R.attr.subtitleTextStyle, R.attr.background, R.attr.backgroundSplit};
         public static final int ActionMode_background = 3;
         public static final int ActionMode_backgroundSplit = 4;
         public static final int ActionMode_height = 0;
         public static final int ActionMode_subtitleTextStyle = 2;
         public static final int ActionMode_titleTextStyle = 1;
-        public static final int[] ActivityChooserView = new int[]{C0722R.attr.initialActivityCount, C0722R.attr.expandActivityOverflowButtonDrawable};
+        public static final int[] ActivityChooserView = new int[]{R.attr.initialActivityCount, R.attr.expandActivityOverflowButtonDrawable};
         public static final int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
         public static final int ActivityChooserView_initialActivityCount = 0;
-        public static final int[] AdsAttrs = new int[]{C0722R.attr.adSize, C0722R.attr.adSizes, C0722R.attr.adUnitId};
+        public static final int[] AdsAttrs = new int[]{R.attr.adSize, R.attr.adSizes, R.attr.adUnitId};
         public static final int AdsAttrs_adSize = 0;
         public static final int AdsAttrs_adSizes = 1;
         public static final int AdsAttrs_adUnitId = 2;
-        public static final int[] CompatTextView = new int[]{C0722R.attr.textAllCaps};
+        public static final int[] CompatTextView = new int[]{R.attr.textAllCaps};
         public static final int CompatTextView_textAllCaps = 0;
-        public static final int[] LinearLayoutICS = new int[]{C0722R.attr.divider, C0722R.attr.showDividers, C0722R.attr.dividerPadding};
+        public static final int[] LinearLayoutICS = new int[]{R.attr.divider, R.attr.showDividers, R.attr.dividerPadding};
         public static final int LinearLayoutICS_divider = 0;
         public static final int LinearLayoutICS_dividerPadding = 2;
         public static final int LinearLayoutICS_showDividers = 1;
-        public static final int[] LoadingImageView = new int[]{C0722R.attr.imageAspectRatioAdjust, C0722R.attr.imageAspectRatio, C0722R.attr.circleCrop};
+        public static final int[] LoadingImageView = new int[]{R.attr.imageAspectRatioAdjust, R.attr.imageAspectRatio, R.attr.circleCrop};
         public static final int LoadingImageView_circleCrop = 2;
         public static final int LoadingImageView_imageAspectRatio = 1;
         public static final int LoadingImageView_imageAspectRatioAdjust = 0;
-        public static final int[] MapAttrs = new int[]{C0722R.attr.mapType, C0722R.attr.cameraBearing, C0722R.attr.cameraTargetLat, C0722R.attr.cameraTargetLng, C0722R.attr.cameraTilt, C0722R.attr.cameraZoom, C0722R.attr.liteMode, C0722R.attr.uiCompass, C0722R.attr.uiRotateGestures, C0722R.attr.uiScrollGestures, C0722R.attr.uiTiltGestures, C0722R.attr.uiZoomControls, C0722R.attr.uiZoomGestures, C0722R.attr.useViewLifecycle, C0722R.attr.zOrderOnTop, C0722R.attr.uiMapToolbar};
+        public static final int[] MapAttrs = new int[]{R.attr.mapType, R.attr.cameraBearing, R.attr.cameraTargetLat, R.attr.cameraTargetLng, R.attr.cameraTilt, R.attr.cameraZoom, R.attr.liteMode, R.attr.uiCompass, R.attr.uiRotateGestures, R.attr.uiScrollGestures, R.attr.uiTiltGestures, R.attr.uiZoomControls, R.attr.uiZoomGestures, R.attr.useViewLifecycle, R.attr.zOrderOnTop, R.attr.uiMapToolbar};
         public static final int MapAttrs_cameraBearing = 1;
         public static final int MapAttrs_cameraTargetLat = 2;
         public static final int MapAttrs_cameraTargetLng = 3;
@@ -905,7 +889,7 @@ public final class C0722R {
         public static final int MenuGroup_android_menuCategory = 3;
         public static final int MenuGroup_android_orderInCategory = 4;
         public static final int MenuGroup_android_visible = 2;
-        public static final int[] MenuItem = new int[]{16842754, 16842766, 16842960, 16843014, 16843156, 16843230, 16843231, 16843233, 16843234, 16843235, 16843236, 16843237, 16843375, C0722R.attr.showAsAction, C0722R.attr.actionLayout, C0722R.attr.actionViewClass, C0722R.attr.actionProviderClass};
+        public static final int[] MenuItem = new int[]{16842754, 16842766, 16842960, 16843014, 16843156, 16843230, 16843231, 16843233, 16843234, 16843235, 16843236, 16843237, 16843375, R.attr.showAsAction, R.attr.actionLayout, R.attr.actionViewClass, R.attr.actionProviderClass};
         public static final int MenuItem_actionLayout = 14;
         public static final int MenuItem_actionProviderClass = 16;
         public static final int MenuItem_actionViewClass = 15;
@@ -932,13 +916,13 @@ public final class C0722R {
         public static final int MenuView_android_preserveIconSpacing = 7;
         public static final int MenuView_android_verticalDivider = 3;
         public static final int MenuView_android_windowAnimationStyle = 0;
-        public static final int[] SearchView = new int[]{16843039, 16843296, 16843364, C0722R.attr.iconifiedByDefault, C0722R.attr.queryHint};
+        public static final int[] SearchView = new int[]{16843039, 16843296, 16843364, R.attr.iconifiedByDefault, R.attr.queryHint};
         public static final int SearchView_android_imeOptions = 2;
         public static final int SearchView_android_inputType = 1;
         public static final int SearchView_android_maxWidth = 0;
         public static final int SearchView_iconifiedByDefault = 3;
         public static final int SearchView_queryHint = 4;
-        public static final int[] Spinner = new int[]{16842927, 16843125, 16843126, 16843362, 16843436, 16843437, C0722R.attr.prompt, C0722R.attr.spinnerMode, C0722R.attr.popupPromptView, C0722R.attr.disableChildrenWhenDisabled};
+        public static final int[] Spinner = new int[]{16842927, 16843125, 16843126, 16843362, 16843436, 16843437, R.attr.prompt, R.attr.spinnerMode, R.attr.popupPromptView, R.attr.disableChildrenWhenDisabled};
         public static final int Spinner_android_dropDownHorizontalOffset = 4;
         public static final int Spinner_android_dropDownSelector = 1;
         public static final int Spinner_android_dropDownVerticalOffset = 5;
@@ -949,23 +933,23 @@ public final class C0722R {
         public static final int Spinner_popupPromptView = 8;
         public static final int Spinner_prompt = 6;
         public static final int Spinner_spinnerMode = 7;
-        public static final int[] Theme = new int[]{C0722R.attr.actionDropDownStyle, C0722R.attr.dropdownListPreferredItemHeight, C0722R.attr.popupMenuStyle, C0722R.attr.panelMenuListWidth, C0722R.attr.panelMenuListTheme, C0722R.attr.listChoiceBackgroundIndicator};
+        public static final int[] Theme = new int[]{R.attr.actionDropDownStyle, R.attr.dropdownListPreferredItemHeight, R.attr.popupMenuStyle, R.attr.panelMenuListWidth, R.attr.panelMenuListTheme, R.attr.listChoiceBackgroundIndicator};
         public static final int Theme_actionDropDownStyle = 0;
         public static final int Theme_dropdownListPreferredItemHeight = 1;
         public static final int Theme_listChoiceBackgroundIndicator = 5;
         public static final int Theme_panelMenuListTheme = 4;
         public static final int Theme_panelMenuListWidth = 3;
         public static final int Theme_popupMenuStyle = 2;
-        public static final int[] View = new int[]{16842970, C0722R.attr.paddingStart, C0722R.attr.paddingEnd};
+        public static final int[] View = new int[]{16842970, R.attr.paddingStart, R.attr.paddingEnd};
         public static final int View_android_focusable = 0;
         public static final int View_paddingEnd = 2;
         public static final int View_paddingStart = 1;
-        public static final int[] WalletFragmentOptions = new int[]{C0722R.attr.appTheme, C0722R.attr.environment, C0722R.attr.fragmentStyle, C0722R.attr.fragmentMode};
+        public static final int[] WalletFragmentOptions = new int[]{R.attr.appTheme, R.attr.environment, R.attr.fragmentStyle, R.attr.fragmentMode};
         public static final int WalletFragmentOptions_appTheme = 0;
         public static final int WalletFragmentOptions_environment = 1;
         public static final int WalletFragmentOptions_fragmentMode = 3;
         public static final int WalletFragmentOptions_fragmentStyle = 2;
-        public static final int[] WalletFragmentStyle = new int[]{C0722R.attr.buyButtonHeight, C0722R.attr.buyButtonWidth, C0722R.attr.buyButtonText, C0722R.attr.buyButtonAppearance, C0722R.attr.maskedWalletDetailsTextAppearance, C0722R.attr.maskedWalletDetailsHeaderTextAppearance, C0722R.attr.maskedWalletDetailsBackground, C0722R.attr.maskedWalletDetailsButtonTextAppearance, C0722R.attr.maskedWalletDetailsButtonBackground, C0722R.attr.maskedWalletDetailsLogoTextColor, C0722R.attr.maskedWalletDetailsLogoImageType};
+        public static final int[] WalletFragmentStyle = new int[]{R.attr.buyButtonHeight, R.attr.buyButtonWidth, R.attr.buyButtonText, R.attr.buyButtonAppearance, R.attr.maskedWalletDetailsTextAppearance, R.attr.maskedWalletDetailsHeaderTextAppearance, R.attr.maskedWalletDetailsBackground, R.attr.maskedWalletDetailsButtonTextAppearance, R.attr.maskedWalletDetailsButtonBackground, R.attr.maskedWalletDetailsLogoTextColor, R.attr.maskedWalletDetailsLogoImageType};
         public static final int WalletFragmentStyle_buyButtonAppearance = 3;
         public static final int WalletFragmentStyle_buyButtonHeight = 0;
         public static final int WalletFragmentStyle_buyButtonText = 2;
@@ -979,7 +963,6 @@ public final class C0722R {
         public static final int WalletFragmentStyle_maskedWalletDetailsTextAppearance = 4;
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.R$xml */
     public static final class xml {
         public static final int preferences = 2131034112;
     }

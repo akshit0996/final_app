@@ -22,12 +22,12 @@ import java.io.OutputStream;
 public class Publisher {
 
     /* renamed from: com.lema.android.heartbeatlistener.Publisher$1 */
-    static class C07181 implements OnClickListener {
+    static class AnonymousClass1 implements OnClickListener {
         private final /* synthetic */ Context val$ctxt;
         private final /* synthetic */ String val$inputAudioFilePath;
         private final /* synthetic */ SharedPreferences val$preferences;
 
-        C07181(SharedPreferences sharedPreferences, Context context, String str) {
+        AnonymousClass1(SharedPreferences sharedPreferences, Context context, String str) {
             this.val$preferences = sharedPreferences;
             this.val$ctxt = context;
             this.val$inputAudioFilePath = str;
@@ -35,27 +35,18 @@ public class Publisher {
 
         public void onClick(DialogInterface dialog, int id) {
             Editor prefEditor = this.val$preferences.edit();
-            prefEditor.putBoolean(this.val$ctxt.getResources().getString(C0722R.string.preference_publish_as_video), false);
+            prefEditor.putBoolean(this.val$ctxt.getResources().getString(R.string.preference_publish_as_video), false);
             prefEditor.commit();
             Publisher.publishAudioFileAsWav(this.val$ctxt, this.val$inputAudioFilePath);
         }
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.Publisher$2 */
-    static class C07192 implements OnClickListener {
-        C07192() {
-        }
-
-        public void onClick(DialogInterface dialog, int id) {
-        }
-    }
-
     /* renamed from: com.lema.android.heartbeatlistener.Publisher$3 */
-    static class C07203 implements OnClickListener {
+    static class AnonymousClass3 implements OnClickListener {
         private final /* synthetic */ Context val$ctxt;
         private final /* synthetic */ String val$inputAudioFilePath;
 
-        C07203(Context context, String str) {
+        AnonymousClass3(Context context, String str) {
             this.val$ctxt = context;
             this.val$inputAudioFilePath = str;
         }
@@ -65,35 +56,32 @@ public class Publisher {
         }
     }
 
-    /* renamed from: com.lema.android.heartbeatlistener.Publisher$4 */
-    static class C07214 implements OnClickListener {
-        C07214() {
-        }
-
-        public void onClick(DialogInterface dialog, int id) {
-        }
-    }
-
     public static void publishAudioFile(Context ctxt, String inputAudioFilePath) {
         Builder builder;
         if (inputAudioFilePath != null) {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctxt);
-            if (!preferences.getBoolean(ctxt.getResources().getString(C0722R.string.preference_publish_as_video), true)) {
+            if (!preferences.getBoolean(ctxt.getResources().getString(R.string.preference_publish_as_video), true)) {
                 publishAudioFileAsWav(ctxt, inputAudioFilePath);
             } else if (Integer.valueOf(VERSION.SDK).intValue() < 18) {
                 builder = new Builder(ctxt);
-                builder.setMessage(ctxt.getResources().getText(C0722R.string.share_video_android_version_warnig_message)).setTitle(ctxt.getResources().getText(C0722R.string.share_video_android_version_warnig_title));
-                builder.setPositiveButton(ctxt.getResources().getText(C0722R.string.yes_message), new C07181(preferences, ctxt, inputAudioFilePath));
-                builder.setNegativeButton(ctxt.getResources().getText(C0722R.string.no_message), new C07192());
+                builder.setMessage(ctxt.getResources().getText(R.string.share_video_android_version_warnig_message)).setTitle(ctxt.getResources().getText(R.string.share_video_android_version_warnig_title));
+                builder.setPositiveButton(ctxt.getResources().getText(R.string.yes_message), new AnonymousClass1(preferences, ctxt, inputAudioFilePath));
+                builder.setNegativeButton(ctxt.getResources().getText(R.string.no_message), new OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
                 builder.create().show();
             } else {
                 try {
                     new VideoCreator(ctxt, inputAudioFilePath, "My Heartbeat Recording.mp4").execute(new Void[0]);
                 } catch (Exception e) {
                     builder = new Builder(ctxt);
-                    builder.setMessage(ctxt.getResources().getText(C0722R.string.share_video_error_message)).setTitle(ctxt.getResources().getText(C0722R.string.share_video_error_title));
-                    builder.setPositiveButton(ctxt.getResources().getText(C0722R.string.yes_message), new C07203(ctxt, inputAudioFilePath));
-                    builder.setNegativeButton(ctxt.getResources().getText(C0722R.string.no_message), new C07214());
+                    builder.setMessage(ctxt.getResources().getText(R.string.share_video_error_message)).setTitle(ctxt.getResources().getText(R.string.share_video_error_title));
+                    builder.setPositiveButton(ctxt.getResources().getText(R.string.yes_message), new AnonymousClass3(ctxt, inputAudioFilePath));
+                    builder.setNegativeButton(ctxt.getResources().getText(R.string.no_message), new OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    });
                     builder.create().show();
                 }
             }
@@ -111,10 +99,10 @@ public class Publisher {
             Uri audioUri = Uri.parse("file://" + outputFile.getAbsolutePath());
             sharingIntent.setType("audio/*");
             sharingIntent.putExtra("android.intent.extra.STREAM", audioUri);
-            ctxt.startActivity(Intent.createChooser(sharingIntent, ctxt.getResources().getString(C0722R.string.share_audio_message)));
+            ctxt.startActivity(Intent.createChooser(sharingIntent, ctxt.getResources().getString(R.string.share_audio_message)));
             return;
         }
-        Toast.makeText(ctxt, "Error : can not write in external memory", 1).show();
+        Toast.makeText(ctxt, "Error : can not write in external memory", Toast.LENGTH_SHORT).show();
     }
 
     private static File copyfile(String srFile, File parentDir, String dtFile) {

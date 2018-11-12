@@ -3,12 +3,10 @@ package com.lema.android.heartbeatlistener.sound.signal.filter.dsp.filter;
 import com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils;
 
 public class IirFilterDesignExstrom {
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType */
-    private static /* synthetic */ int[] f67x5618f1a7;
+    private static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType;
 
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType */
-    static /* synthetic */ int[] m2335x5618f1a7() {
-        int[] iArr = f67x5618f1a7;
+    static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType() {
+        int[] iArr = $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType;
         if (iArr == null) {
             iArr = new int[FilterPassType.values().length];
             try {
@@ -27,7 +25,7 @@ public class IirFilterDesignExstrom {
                 iArr[FilterPassType.lowpass.ordinal()] = 1;
             } catch (NoSuchFieldError e4) {
             }
-            f67x5618f1a7 = iArr;
+            $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType = iArr;
         }
         return iArr;
     }
@@ -44,14 +42,14 @@ public class IirFilterDesignExstrom {
             throw new IllegalArgumentException("Invalid fcf2.");
         } else {
             IirFilterCoefficients coeffs = new IirFilterCoefficients();
-            coeffs.f65a = calculateACoefficients(filterPassType, filterOrder, fcf1, fcf2);
-            coeffs.f66b = ArrayUtils.multiply(calculateBCoefficients(filterPassType, filterOrder, fcf1, fcf2), calculateScalingFactor(filterPassType, filterOrder, fcf1, fcf2));
+            coeffs.a = calculateACoefficients(filterPassType, filterOrder, fcf1, fcf2);
+            coeffs.b = ArrayUtils.multiply(calculateBCoefficients(filterPassType, filterOrder, fcf1, fcf2), calculateScalingFactor(filterPassType, filterOrder, fcf1, fcf2));
             return coeffs;
         }
     }
 
     private static double[] calculateACoefficients(FilterPassType filterPassType, int filterOrder, double fcf1, double fcf2) {
-        switch (m2335x5618f1a7()[filterPassType.ordinal()]) {
+        switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType()[filterPassType.ordinal()]) {
             case 1:
             case 2:
                 return calculateACoefficients_lp_hp(filterOrder, fcf1);
@@ -117,7 +115,7 @@ public class IirFilterDesignExstrom {
     }
 
     private static double[] calculateBCoefficients(FilterPassType filterPassType, int filterOrder, double fcf1, double fcf2) {
-        switch (m2335x5618f1a7()[filterPassType.ordinal()]) {
+        switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType()[filterPassType.ordinal()]) {
             case 1:
                 return ArrayUtils.toDouble(calculateBCoefficients_lp(filterOrder));
             case 2:
@@ -184,7 +182,7 @@ public class IirFilterDesignExstrom {
     }
 
     private static double calculateScalingFactor(FilterPassType filterPassType, int filterOrder, double fcf1, double fcf2) {
-        switch (m2335x5618f1a7()[filterPassType.ordinal()]) {
+        switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType()[filterPassType.ordinal()]) {
             case 1:
             case 2:
                 return calculateScalingFactor_lp_hp(filterPassType, filterOrder, fcf1);
@@ -206,7 +204,7 @@ public class IirFilterDesignExstrom {
         for (int k = 0; k < n / 2; k++) {
             sf *= 1.0d + (Math.sin(((double) ((k * 2) + 1)) * parg0) * fomega);
         }
-        switch (m2335x5618f1a7()[filterPassType.ordinal()]) {
+        switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType()[filterPassType.ordinal()]) {
             case 1:
                 fomega2 = Math.sin(omega / 2.0d);
                 if (n % 2 != 0) {

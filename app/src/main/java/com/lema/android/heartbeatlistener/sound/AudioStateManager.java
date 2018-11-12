@@ -12,29 +12,12 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import com.lema.android.heartbeatlistener.C0722R;
+import com.lema.android.heartbeatlistener.R;
 import com.lema.android.heartbeatlistener.sound.Recorder.AudioRecorderManager;
 
 public class AudioStateManager {
     private static AudioStateManager instance;
-    IAudioFunctions audioFunctions = new C12851();
-    ISoundManager soundManager = null;
-
-    /* renamed from: com.lema.android.heartbeatlistener.sound.AudioStateManager$6 */
-    class C07386 implements OnClickListener {
-        C07386() {
-        }
-
-        public void onClick(DialogInterface dialog, int id) {
-            AudioStateManager.this.clearDisplay();
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.sound.AudioStateManager$1 */
-    class C12851 implements IAudioFunctions {
-        C12851() {
-        }
-
+    IAudioFunctions audioFunctions = new IAudioFunctions() {
         public void stopRecord() {
         }
 
@@ -49,40 +32,21 @@ public class AudioStateManager {
 
         public void displayStopRecordAd() {
         }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.sound.AudioStateManager$2 */
-    class C12862 implements IAction {
-        C12862() {
-        }
-
-        public void executeAction(Context ctxt) {
-            AudioStateManager.this.soundManager = AudioStateManager.this.createSoundSensor(ctxt);
-            AudioStateManager.this.soundManager.launch();
-            AudioStateManager.this.audioFunctions.startListenning();
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.sound.AudioStateManager$3 */
-    class C12873 implements IAction {
-        C12873() {
-        }
-
-        public void executeAction(Context ctxt) {
-            AudioStateManager.this.soundManager = AudioStateManager.this.createSoundSensor(ctxt);
-            AudioStateManager.this.soundManager.launch();
-            AudioStateManager.this.audioFunctions.startListenning();
-            AudioRecorderManager.getInstance().startRecord();
-            AudioStateManager.this.audioFunctions.startRecord();
-        }
-    }
+    };
+    ISoundManager soundManager = null;
 
     private AudioStateManager() {
     }
 
     public void startListenning(Context ctxt) {
         if (!isListenning()) {
-            warningMessageActionDecorator(ctxt, new C12862());
+            warningMessageActionDecorator(ctxt, new IAction() {
+                public void executeAction(Context ctxt) {
+                    AudioStateManager.this.soundManager = AudioStateManager.this.createSoundSensor(ctxt);
+                    AudioStateManager.this.soundManager.launch();
+                    AudioStateManager.this.audioFunctions.startListenning();
+                }
+            });
         }
     }
 
@@ -96,7 +60,15 @@ public class AudioStateManager {
             this.audioFunctions.startRecord();
             return;
         }
-        warningMessageActionDecorator(ctxt, new C12873());
+        warningMessageActionDecorator(ctxt, new IAction() {
+            public void executeAction(Context ctxt) {
+                AudioStateManager.this.soundManager = AudioStateManager.this.createSoundSensor(ctxt);
+                AudioStateManager.this.soundManager.launch();
+                AudioStateManager.this.audioFunctions.startListenning();
+                AudioRecorderManager.getInstance().startRecord();
+                AudioStateManager.this.audioFunctions.startRecord();
+            }
+        });
     }
 
     public void stopRecording(Context ctxt) {
@@ -168,8 +140,8 @@ public class AudioStateManager {
             action.executeAction(ctxt);
             return;
         }
-        View checkBoxView = View.inflate(ctxt, C0722R.layout.checkbox, null);
-        CheckBox checkBox = (CheckBox) checkBoxView.findViewById(C0722R.id.checkbox);
+        View checkBoxView = View.inflate(ctxt, R.layout.checkbox, null);
+        CheckBox checkBox = (CheckBox) checkBoxView.findViewById(R.id.checkbox);
         checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Editor editor = sharedPref.edit();
@@ -177,15 +149,19 @@ public class AudioStateManager {
                 editor.commit();
             }
         });
-        checkBox.setText(ctxt.getResources().getString(C0722R.string.listen_launch_warning_checkbox_text));
+        checkBox.setText(ctxt.getResources().getString(R.string.listen_launch_warning_checkbox_text));
         Builder builder = new Builder(ctxt);
-        builder.setMessage(ctxt.getResources().getText(C0722R.string.listen_launch_warning_message)).setTitle(ctxt.getResources().getText(C0722R.string.listen_launch_warning_title)).setView(checkBoxView);
-        builder.setPositiveButton(ctxt.getResources().getText(C0722R.string.continue_message), new OnClickListener() {
+        builder.setMessage(ctxt.getResources().getText(R.string.listen_launch_warning_message)).setTitle(ctxt.getResources().getText(R.string.listen_launch_warning_title)).setView(checkBoxView);
+        builder.setPositiveButton(ctxt.getResources().getText(R.string.continue_message), new OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 action.executeAction(ctxt);
             }
         });
-        builder.setNegativeButton(ctxt.getResources().getText(C0722R.string.cancel_message), new C07386());
+        builder.setNegativeButton(ctxt.getResources().getText(R.string.cancel_message), new OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                AudioStateManager.this.clearDisplay();
+            }
+        });
         builder.create().show();
     }
 

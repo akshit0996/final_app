@@ -6,12 +6,9 @@ import com.lema.android.heartbeatlistener.sound.signal.filter.dsp.math.Polynomia
 import com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils;
 
 public class IirFilterDesignFisher {
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterCharacteristicsType */
-    private static /* synthetic */ int[] f68x7d051156;
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType */
-    private static /* synthetic */ int[] f69x5618f1a7;
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$IirFilterDesignFisher$SToZMappingMethod */
-    private static /* synthetic */ int[] f70xc12ca28;
+    private static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterCharacteristicsType;
+    private static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType;
+    private static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$IirFilterDesignFisher$SToZMappingMethod;
 
     private static class PolesAndZeros {
         public Complex[] poles;
@@ -26,9 +23,8 @@ public class IirFilterDesignFisher {
         matchedZTransform
     }
 
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterCharacteristicsType */
-    static /* synthetic */ int[] m2336x7d051156() {
-        int[] iArr = f68x7d051156;
+    static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterCharacteristicsType() {
+        int[] iArr = $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterCharacteristicsType;
         if (iArr == null) {
             iArr = new int[FilterCharacteristicsType.values().length];
             try {
@@ -43,14 +39,13 @@ public class IirFilterDesignFisher {
                 iArr[FilterCharacteristicsType.chebyshev.ordinal()] = 2;
             } catch (NoSuchFieldError e3) {
             }
-            f68x7d051156 = iArr;
+            $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterCharacteristicsType = iArr;
         }
         return iArr;
     }
 
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType */
-    static /* synthetic */ int[] m2337x5618f1a7() {
-        int[] iArr = f69x5618f1a7;
+    static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType() {
+        int[] iArr = $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType;
         if (iArr == null) {
             iArr = new int[FilterPassType.values().length];
             try {
@@ -69,14 +64,13 @@ public class IirFilterDesignFisher {
                 iArr[FilterPassType.lowpass.ordinal()] = 1;
             } catch (NoSuchFieldError e4) {
             }
-            f69x5618f1a7 = iArr;
+            $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType = iArr;
         }
         return iArr;
     }
 
-    /* renamed from: $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$IirFilterDesignFisher$SToZMappingMethod */
-    static /* synthetic */ int[] m2338xc12ca28() {
-        int[] iArr = f70xc12ca28;
+    static /* synthetic */ int[] $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$IirFilterDesignFisher$SToZMappingMethod() {
+        int[] iArr = $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$IirFilterDesignFisher$SToZMappingMethod;
         if (iArr == null) {
             iArr = new int[SToZMappingMethod.values().length];
             try {
@@ -87,7 +81,7 @@ public class IirFilterDesignFisher {
                 iArr[SToZMappingMethod.matchedZTransform.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
-            f70xc12ca28 = iArr;
+            $SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$IirFilterDesignFisher$SToZMappingMethod = iArr;
         }
         return iArr;
     }
@@ -98,7 +92,7 @@ public class IirFilterDesignFisher {
     private static Complex[] getPoles(FilterCharacteristicsType filterCharacteristicsType, int filterOrder, double ripple) {
         Complex[] poles;
         int i;
-        switch (m2336x7d051156()[filterCharacteristicsType.ordinal()]) {
+        switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterCharacteristicsType()[filterCharacteristicsType.ordinal()]) {
             case 1:
                 poles = new Complex[filterOrder];
                 for (i = 0; i < filterOrder; i++) {
@@ -149,7 +143,7 @@ public class IirFilterDesignFisher {
             double bw;
             Complex hba;
             Complex temp;
-            switch (m2337x5618f1a7()[filterPassType.ordinal()]) {
+            switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType()[filterPassType.ordinal()]) {
                 case 1:
                     sPlane = new PolesAndZeros();
                     sPlane.poles = ArrayUtils.multiply(poles, w1);
@@ -203,7 +197,7 @@ public class IirFilterDesignFisher {
 
     private static PolesAndZeros MapSPlaneToZPlane(PolesAndZeros sPlane, SToZMappingMethod sToZMappingMethod) {
         PolesAndZeros zPlane;
-        switch (m2338xc12ca28()[sToZMappingMethod.ordinal()]) {
+        switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$IirFilterDesignFisher$SToZMappingMethod()[sToZMappingMethod.ordinal()]) {
             case 1:
                 zPlane = new PolesAndZeros();
                 zPlane.poles = doBilinearTransform(sPlane.poles);
@@ -264,7 +258,7 @@ public class IirFilterDesignFisher {
     }
 
     private static double computeGain(RationalFraction tf, FilterPassType filterPassType, double fcf1, double fcf2) {
-        switch (m2337x5618f1a7()[filterPassType.ordinal()]) {
+        switch ($SWITCH_TABLE$com$lema$android$heartbeatlistener$sound$signal$filter$dsp$filter$FilterPassType()[filterPassType.ordinal()]) {
             case 1:
                 return computeGainAt(tf, Complex.ONE);
             case 2:
@@ -285,9 +279,9 @@ public class IirFilterDesignFisher {
     private static IirFilterCoefficients computeIirFilterCoefficients(RationalFraction tf) {
         double scale = tf.bottom[0];
         IirFilterCoefficients coeffs = new IirFilterCoefficients();
-        coeffs.f65a = ArrayUtils.divide(tf.bottom, scale);
-        coeffs.f65a[0] = 1.0d;
-        coeffs.f66b = ArrayUtils.divide(tf.top, scale);
+        coeffs.a = ArrayUtils.divide(tf.bottom, scale);
+        coeffs.a[0] = 1.0d;
+        coeffs.b = ArrayUtils.divide(tf.top, scale);
         return coeffs;
     }
 
@@ -297,7 +291,7 @@ public class IirFilterDesignFisher {
         RationalFraction tf = computeTransferFunction(MapSPlaneToZPlane(normalize(poles, filterPassType, fcf1, fcf2, sToZMappingMethod == SToZMappingMethod.bilinearTransform), sToZMappingMethod));
         double gain = computeGain(tf, filterPassType, fcf1, fcf2);
         IirFilterCoefficients coeffs = computeIirFilterCoefficients(tf);
-        coeffs.f66b = ArrayUtils.divide(coeffs.f66b, gain);
+        coeffs.b = ArrayUtils.divide(coeffs.b, gain);
         return coeffs;
     }
 

@@ -21,8 +21,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
-import com.lema.android.heartbeatlistener.C0722R;
 import com.project.heart.myapplication.MainActivity;
+import com.lema.android.heartbeatlistener.R;
 import com.lema.android.heartbeatlistener.activities.HelpActivity;
 import com.lema.android.heartbeatlistener.sound.AudioStateManager;
 import com.lema.android.heartbeatlistener.sound.IAudioFunctions;
@@ -35,108 +35,6 @@ public class MainFragment extends Fragment {
     AnimationDrawable mainImageFrame;
     ToggleButton recordButton;
 
-    /* renamed from: com.lema.android.heartbeatlistener.fragments.MainFragment$1 */
-    class C07241 implements OnCheckedChangeListener {
-        C07241() {
-        }
-
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (MainFragment.this.listenButton.isChecked()) {
-                AudioStateManager.getInstance().startListenning(MainFragment.this.getActivity());
-            } else {
-                AudioStateManager.getInstance().stopListenning(MainFragment.this.getActivity());
-            }
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.fragments.MainFragment$2 */
-    class C07252 implements OnCheckedChangeListener {
-        C07252() {
-        }
-
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (MainFragment.this.recordButton.isChecked()) {
-                AudioStateManager.getInstance().startRecording(MainFragment.this.getActivity());
-            } else {
-                AudioStateManager.getInstance().stopRecording(MainFragment.this.getActivity());
-            }
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.fragments.MainFragment$3 */
-    class C07263 implements OnClickListener {
-        C07263() {
-        }
-
-        public void onClick(View v) {
-             if(MainFragment.this.activity != null)
-            {
-                MainFragment.this.activity.showRecordingFragment();
-            }
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.fragments.MainFragment$4 */
-    class C07274 implements OnClickListener {
-        C07274() {
-        }
-
-        public void onClick(View v) {
-            MainFragment.this.startActivity(new Intent(v.getContext(), HelpActivity.class));
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.fragments.MainFragment$6 */
-    class C07286 implements DialogInterface.OnClickListener {
-        C07286() {
-        }
-
-        public void onClick(DialogInterface dialog, int id) {
-            MainFragment.this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=com.lema.android.heartbeatlistener")));
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.fragments.MainFragment$7 */
-    class C07297 implements DialogInterface.OnClickListener {
-        C07297() {
-        }
-
-        public void onClick(DialogInterface dialog, int id) {
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.fragments.MainFragment$5 */
-    class C12845 implements IAudioFunctions {
-        C12845() {
-        }
-
-        public void stopRecord() {
-            MainFragment.this.recordButton.setChecked(false);
-        }
-
-        public void stopListenning() {
-            MainFragment.this.listenButton.setChecked(false);
-            MainFragment.this.mainImageFrame.stop();
-        }
-
-        public void startRecord() {
-            MainFragment.this.recordButton.setChecked(true);
-        }
-
-        @Override
-        public void displayStopRecordAd() {
-
-        }
-
-        public void startListenning() {
-            MainFragment.this.listenButton.setChecked(true);
-            MainFragment.this.mainImageFrame.start();
-        }
-
-
-        }
-
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         instance = this;
@@ -146,20 +44,70 @@ public class MainFragment extends Fragment {
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(C0722R.layout.fragment_main, container, false);
-        //ImageView animated_image = (ImageView) rootView.findViewById(C0722R.id.main_animated_image);
-       // animated_image.setBackgroundResource(C0722R.drawable.pregnant_animation);
-       // this.mainImageFrame = (AnimationDrawable) animated_image.getBackground();
-        this.listenButton = (ToggleButton) rootView.findViewById(C0722R.id.listenToggleButton);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        ImageView animated_image = (ImageView) rootView.findViewById(R.id.main_animated_image);
+        animated_image.setBackgroundResource(R.drawable.pregnant_animation);
+        this.mainImageFrame = (AnimationDrawable) animated_image.getBackground();
+        this.listenButton = (ToggleButton) rootView.findViewById(R.id.listenToggleButton);
         this.listenButton.setChecked(AudioStateManager.getInstance().isListenning());
-        this.listenButton.setOnCheckedChangeListener(new C07241());
-        this.recordButton = (ToggleButton) rootView.findViewById(C0722R.id.recordToggleButton);
+        this.listenButton.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (MainFragment.this.listenButton.isChecked()) {
+                    AudioStateManager.getInstance().startListenning(MainFragment.this.getActivity());
+                } else {
+                    AudioStateManager.getInstance().stopListenning(MainFragment.this.getActivity());
+                }
+            }
+        });
+        this.recordButton = (ToggleButton) rootView.findViewById(R.id.recordToggleButton);
         this.recordButton.setChecked(AudioStateManager.getInstance().isRecording());
-        this.recordButton.setOnCheckedChangeListener(new C07252());
-      //  ((Button) rootView.findViewById(C0722R.id.replay_activity_button)).setOnClickListener(new C07263());
-       // this.helpIcon = (ImageView) rootView.findViewById(C0722R.id.main_page_help);
-       // this.helpIcon.setOnClickListener(new C07274());
-        AudioStateManager.getInstance().setAudioFunction(new C12845());
+        this.recordButton.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (MainFragment.this.recordButton.isChecked()) {
+                    AudioStateManager.getInstance().startRecording(MainFragment.this.getActivity());
+                } else {
+                    AudioStateManager.getInstance().stopRecording(MainFragment.this.getActivity());
+                }
+            }
+        });
+        ((Button) rootView.findViewById(R.id.replay_activity_button)).setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+
+                 if (MainFragment.this.activity != null) {
+                    MainFragment.this.activity.showRecordingFragment();
+                }
+            }
+        });
+        this.helpIcon = (ImageView) rootView.findViewById(R.id.main_page_help);
+        this.helpIcon.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                MainFragment.this.startActivity(new Intent(v.getContext(), HelpActivity.class));
+            }
+        });
+        AudioStateManager.getInstance().setAudioFunction(new IAudioFunctions() {
+            public void stopRecord() {
+                MainFragment.this.recordButton.setChecked(false);
+            }
+
+            public void stopListenning() {
+                MainFragment.this.listenButton.setChecked(false);
+                MainFragment.this.mainImageFrame.stop();
+            }
+
+            public void startRecord() {
+                MainFragment.this.recordButton.setChecked(true);
+            }
+
+            public void startListenning() {
+                MainFragment.this.listenButton.setChecked(true);
+                MainFragment.this.mainImageFrame.start();
+            }
+
+            @Override
+            public void displayStopRecordAd() {
+
+            }
+        });
         requestForRating(getActivity());
         return rootView;
     }
@@ -189,9 +137,16 @@ public class MainFragment extends Fragment {
                 prefEdit.putInt("requestForRatingNumber", requestForRatingNumber + 1);
                 prefEdit.commit();
                 Builder builder = new Builder(ctxt);
-                builder.setMessage(ctxt.getResources().getText(C0722R.string.rate_request_message)).setTitle(ctxt.getResources().getText(C0722R.string.rate_request_title));
-                builder.setPositiveButton(ctxt.getResources().getText(C0722R.string.rate_message), new C07286());
-                builder.setNegativeButton(ctxt.getResources().getText(C0722R.string.ignore_message), new C07297());
+                builder.setMessage(ctxt.getResources().getText(R.string.rate_request_message)).setTitle(ctxt.getResources().getText(R.string.rate_request_title));
+                builder.setPositiveButton(ctxt.getResources().getText(R.string.rate_message), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainFragment.this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=com.lema.android.heartbeatlistener")));
+                    }
+                });
+                builder.setNegativeButton(ctxt.getResources().getText(R.string.ignore_message), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
                 builder.create().show();
             }
         }

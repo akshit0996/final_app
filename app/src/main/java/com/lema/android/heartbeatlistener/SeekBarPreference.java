@@ -42,7 +42,7 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
         this.mSeekBar = new SeekBar(context, attrs);
         this.mSeekBar.setMax(this.mMaxValue - this.mMinValue);
         this.mSeekBar.setOnSeekBarChangeListener(this);
-        setWidgetLayoutResource(C0722R.layout.seek_bar_preference);
+        setWidgetLayoutResource(R.layout.seek_bar_preference);
     }
 
     private void setValuesFromXml(AttributeSet attrs) {
@@ -78,13 +78,13 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
         super.onBindView(view);
         try {
             ViewParent oldContainer = this.mSeekBar.getParent();
-            ViewParent newContainer = (ViewGroup) view.findViewById(C0722R.id.seekBarPrefBarContainer);
+            ViewParent newContainer = (ViewGroup) view.findViewById(R.id.seekBarPrefBarContainer);
             if (oldContainer != newContainer) {
                 if (oldContainer != null) {
                     ((ViewGroup) oldContainer).removeView(this.mSeekBar);
                 }
-                ((ViewGroup) newContainer).removeAllViews();
-                ((ViewGroup) newContainer).addView(this.mSeekBar, -1, -2);
+                ((ViewGroup)newContainer).removeAllViews();
+                ((ViewGroup)newContainer).addView(this.mSeekBar, -1, -2);
             }
         } catch (Exception ex) {
             Log.e(this.TAG, "Error binding view: " + ex.toString());
@@ -97,12 +97,12 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
 
     protected void updateView(View view) {
         try {
-            this.mStatusText = (TextView) view.findViewById(C0722R.id.seekBarPrefValue);
+            this.mStatusText = (TextView) view.findViewById(R.id.seekBarPrefValue);
             this.mStatusText.setText(String.valueOf(this.mCurrentValue));
             this.mStatusText.setMinimumWidth(30);
             this.mSeekBar.setProgress(this.mCurrentValue - this.mMinValue);
-            ((TextView) view.findViewById(C0722R.id.seekBarPrefUnitsRight)).setText(this.mUnitsRight);
-            ((TextView) view.findViewById(C0722R.id.seekBarPrefUnitsLeft)).setText(this.mUnitsLeft);
+            ((TextView) view.findViewById(R.id.seekBarPrefUnitsRight)).setText(this.mUnitsRight);
+            ((TextView) view.findViewById(R.id.seekBarPrefUnitsLeft)).setText(this.mUnitsLeft);
         } catch (Exception e) {
             Log.e(this.TAG, "Error updating seek bar preference", e);
         }

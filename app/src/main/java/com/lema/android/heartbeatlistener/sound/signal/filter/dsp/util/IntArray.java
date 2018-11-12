@@ -4,8 +4,7 @@ import android.support.v4.view.MotionEventCompat;
 
 public final class IntArray {
     private static final int defaultInitialCapacity = 16;
-    /* renamed from: a */
-    private int[] f86a;
+    private int[] a;
     private int initialCapacity;
     private int size;
 
@@ -37,7 +36,7 @@ public final class IntArray {
 
     public void add(int element) {
         ensureCapacity(this.size + 1);
-        int[] iArr = this.f86a;
+        int[] iArr = this.a;
         int i = this.size;
         this.size = i + 1;
         iArr[i] = element;
@@ -46,27 +45,27 @@ public final class IntArray {
     public void addAll(int[] a2) {
         int p = this.size;
         setSize(this.size + a2.length);
-        System.arraycopy(a2, 0, this.f86a, p, a2.length);
+        System.arraycopy(a2, 0, this.a, p, a2.length);
     }
 
     public void set(int index, int element) {
-        this.f86a[index] = element;
+        this.a[index] = element;
     }
 
     public int get(int index) {
-        return this.f86a[index];
+        return this.a[index];
     }
 
     public void ensureCapacity(int minCapacity) {
-        int oldCapacity = this.f86a == null ? 0 : this.f86a.length;
+        int oldCapacity = this.a == null ? 0 : this.a.length;
         if (oldCapacity < minCapacity) {
             int newCapacity = Math.max(Math.max(minCapacity, oldCapacity * 2), this.initialCapacity);
             if (newCapacity > 0) {
                 int[] newArray = new int[newCapacity];
                 if (this.size > 0) {
-                    System.arraycopy(this.f86a, 0, newArray, 0, this.size);
+                    System.arraycopy(this.a, 0, newArray, 0, this.size);
                 }
-                this.f86a = newArray;
+                this.a = newArray;
             }
         }
     }
@@ -74,7 +73,7 @@ public final class IntArray {
     public int[] toArray() {
         int[] a2 = new int[this.size];
         if (this.size > 0) {
-            System.arraycopy(this.f86a, 0, a2, 0, this.size);
+            System.arraycopy(this.a, 0, a2, 0, this.size);
         }
         return a2;
     }
@@ -85,7 +84,7 @@ public final class IntArray {
             if (p > 0) {
                 s.append(delimiter);
             }
-            s.append(Integer.toString(this.f86a[p]));
+            s.append(Integer.toString(this.a[p]));
         }
         return s.toString();
     }
@@ -145,12 +144,12 @@ public final class IntArray {
         if (this.size == 0) {
             return true;
         }
-        int[] a2 = ia2.f86a;
-        if (this.size >= 16 && (this.f86a[0] != a2[0] || this.f86a[this.size / 2] != a2[this.size / 2] || this.f86a[this.size - 1] != a2[this.size - 1])) {
+        int[] a2 = ia2.a;
+        if (this.size >= 16 && (this.a[0] != a2[0] || this.a[this.size / 2] != a2[this.size / 2] || this.a[this.size - 1] != a2[this.size - 1])) {
             return false;
         }
         for (int i = 0; i < this.size; i++) {
-            if (this.f86a[i] != a2[i]) {
+            if (this.a[i] != a2[i]) {
                 return false;
             }
         }

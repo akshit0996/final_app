@@ -5,69 +5,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ArrayUtils {
-
-    /* renamed from: com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils$1 */
-    static class C07401 implements Comparator<Double> {
-        C07401() {
-        }
-
-        public int compare(Double o1, Double o2) {
-            return Double.compare(Math.abs(o1.doubleValue()), Math.abs(o2.doubleValue()));
-        }
-
-        public boolean equals(Object obj) {
-            throw new AssertionError();
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils$2 */
-    static class C07412 implements Comparator<Complex> {
-        C07412() {
-        }
-
-        public int compare(Complex o1, Complex o2) {
-            if (o1.im() < o2.im()) {
-                return -1;
-            }
-            if (o1.im() > o2.im()) {
-                return 1;
-            }
-            return Double.compare(o1.re(), o2.re());
-        }
-
-        public boolean equals(Object obj) {
-            throw new AssertionError();
-        }
-    }
-
-    /* renamed from: com.lema.android.heartbeatlistener.sound.signal.filter.dsp.util.ArrayUtils$3 */
-    static class C07423 implements Comparator<Complex> {
-        C07423() {
-        }
-
-        public int compare(Complex o1, Complex o2) {
-            double absIm1 = Math.abs(o1.im());
-            double absIm2 = Math.abs(o2.im());
-            if (absIm1 < absIm2) {
-                return -1;
-            }
-            if (absIm1 > absIm2) {
-                return 1;
-            }
-            if (o1.im() > o2.im()) {
-                return -1;
-            }
-            if (o1.im() < o2.im()) {
-                return 1;
-            }
-            return Double.compare(o1.re(), o2.re());
-        }
-
-        public boolean equals(Object obj) {
-            throw new AssertionError();
-        }
-    }
-
     private ArrayUtils() {
     }
 
@@ -161,19 +98,63 @@ public class ArrayUtils {
 
     public static double[] sortByMagnitude(double[] a) {
         Double[] a2 = toObject(a);
-        Arrays.sort(a2, new C07401());
+        Arrays.sort(a2, new Comparator<Double>() {
+            public int compare(Double o1, Double o2) {
+                return Double.compare(Math.abs(o1.doubleValue()), Math.abs(o2.doubleValue()));
+            }
+
+            public boolean equals(Object obj) {
+                throw new AssertionError();
+            }
+        });
         return toDouble(a2);
     }
 
     public static Complex[] sortByImRe(Complex[] a) {
         Complex[] a2 = copy(a);
-        Arrays.sort(a2, new C07412());
+        Arrays.sort(a2, new Comparator<Complex>() {
+            public int compare(Complex o1, Complex o2) {
+                if (o1.im() < o2.im()) {
+                    return -1;
+                }
+                if (o1.im() > o2.im()) {
+                    return 1;
+                }
+                return Double.compare(o1.re(), o2.re());
+            }
+
+            public boolean equals(Object obj) {
+                throw new AssertionError();
+            }
+        });
         return a2;
     }
 
     public static Complex[] sortByAbsImNegImRe(Complex[] a) {
         Complex[] a2 = copy(a);
-        Arrays.sort(a2, new C07423());
+        Arrays.sort(a2, new Comparator<Complex>() {
+            public int compare(Complex o1, Complex o2) {
+                double absIm1 = Math.abs(o1.im());
+                double absIm2 = Math.abs(o2.im());
+                if (absIm1 < absIm2) {
+                    return -1;
+                }
+                if (absIm1 > absIm2) {
+                    return 1;
+                }
+                if (o1.im() > o2.im()) {
+                    return -1;
+                }
+                if (o1.im() < o2.im()) {
+                    return 1;
+                }
+                return Double.compare(o1.re(), o2.re());
+            }
+
+            public boolean equals(Object obj) {
+                throw new AssertionError();
+            }
+        });
         return a2;
     }
 

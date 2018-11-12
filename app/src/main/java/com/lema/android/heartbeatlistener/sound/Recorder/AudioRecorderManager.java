@@ -24,34 +24,6 @@ public class AudioRecorderManager {
     double sampleRate = 44100.0d;
     boolean shallRecord = false;
 
-    /* renamed from: com.lema.android.heartbeatlistener.sound.Recorder.AudioRecorderManager$1 */
-    class C07391 implements Comparator<File> {
-        C07391() {
-        }
-
-        public int compare(File lhs, File rhs) {
-            if (lhs == null || rhs == null) {
-                if (lhs == null && rhs == null) {
-                    return 0;
-                }
-                if (lhs != null || rhs == null) {
-                    return 1;
-                }
-                return -1;
-            } else if (lhs.exists() && rhs.exists()) {
-                return (int) Math.signum((float) (rhs.lastModified() - lhs.lastModified()));
-            } else {
-                if (!lhs.exists() && !rhs.exists()) {
-                    return 0;
-                }
-                if (!lhs.exists() || rhs.exists()) {
-                    return 1;
-                }
-                return -1;
-            }
-        }
-    }
-
     public static AudioRecorderManager getInstance() {
         if (instance == null) {
             instance = new AudioRecorderManager();
@@ -175,7 +147,30 @@ public class AudioRecorderManager {
 
     public RecordsAdapter getRecordAdapterInstance(Context context) {
         File[] fileList = getRecordsFile(context).listFiles();
-        TreeSet<File> fileSet = new TreeSet(new C07391());
+        TreeSet<File> fileSet = new TreeSet(new Comparator<File>() {
+            public int compare(File lhs, File rhs) {
+                if (lhs == null || rhs == null) {
+                    if (lhs == null && rhs == null) {
+                        return 0;
+                    }
+                    if (lhs != null || rhs == null) {
+                        return 1;
+                    }
+                    return -1;
+                } else if (lhs.exists() && rhs.exists()) {
+                    return (int) Math.signum((float) (rhs.lastModified() - lhs.lastModified()));
+                } else {
+                    if (!lhs.exists() && !rhs.exists()) {
+                        return 0;
+                    }
+                    if (!lhs.exists() || rhs.exists()) {
+                        return 1;
+                    }
+                    return -1;
+                }
+            }
+        });
+
         for (File add : fileList) {
             fileSet.add(add);
         }
