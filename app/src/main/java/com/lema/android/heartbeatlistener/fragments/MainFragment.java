@@ -108,17 +108,17 @@ public class MainFragment extends Fragment {
 
             }
         });
-        requestForRating(getActivity());
+        //requestForRating(getActivity());
         return rootView;
     }
 
-    private void logAdDisplay(Context ctxt) {
+   /* private void logAdDisplay(Context ctxt) {
         Editor prefEdit = PreferenceManager.getDefaultSharedPreferences(ctxt).edit();
         prefEdit.putLong("lastAdDisplayTime", System.currentTimeMillis());
         prefEdit.commit();
-    }
+    }*/
 
-    private void requestForRating(Context ctxt) {
+   /* private void requestForRating(Context ctxt) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctxt);
         long lastRequestForRatingTime = preferences.getLong("requestForRating", 0);
         int requestForRatingNumber = preferences.getInt("requestForRatingNumber", 0);
@@ -150,7 +150,7 @@ public class MainFragment extends Fragment {
                 builder.create().show();
             }
         }
-    }
+    }*/
 
     private long computeTimeFromInstall(Context ctxt) {
         try {
@@ -160,7 +160,7 @@ public class MainFragment extends Fragment {
         }
     }
 
-    private boolean shallDisplayInterstitial(Context context) {
+  /*  private boolean shallDisplayInterstitial(Context context) {
         if (!isAdDisplayDelayRespected(context)) {
             return false;
         }
@@ -178,12 +178,12 @@ public class MainFragment extends Fragment {
         return Math.random() * coef > 0.5d;
     }
 
-    private boolean isAdDisplayDelayRespected(Context ctxt) {
+      private boolean isAdDisplayDelayRespected(Context ctxt) {
         if (System.currentTimeMillis() - PreferenceManager.getDefaultSharedPreferences(ctxt).getLong("lastAdDisplayTime", 0) > 100000) {
             return true;
         }
         return false;
-    }
+    }*/
 
     public void onDestroy() {
         AudioStateManager.getInstance().stop(getActivity());
