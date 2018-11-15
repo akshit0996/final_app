@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.lema.android.heartbeatlistener.activities.HelpActivity;
 import com.lema.android.heartbeatlistener.activities.SettingsActivity;
-import com.lema.android.heartbeatlistener.fragments.MainFragment;
+
 import com.lema.android.heartbeatlistener.fragments.RecordingFragment;
 import com.lema.android.heartbeatlistener.sound.AudioStateManager;
 

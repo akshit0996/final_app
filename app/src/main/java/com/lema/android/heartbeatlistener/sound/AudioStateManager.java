@@ -14,6 +14,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import com.lema.android.heartbeatlistener.R;
 import com.lema.android.heartbeatlistener.sound.Recorder.AudioRecorderManager;
+import android.support.annotation.AnimRes;
+
 
 public class AudioStateManager {
     private static AudioStateManager instance;
@@ -39,15 +41,10 @@ public class AudioStateManager {
     }
 
     public void startListenning(Context ctxt) {
-        if (!isListenning()) {
-            warningMessageActionDecorator(ctxt, new IAction() {
-                public void executeAction(Context ctxt) {
-                    AudioStateManager.this.soundManager = AudioStateManager.this.createSoundSensor(ctxt);
-                    AudioStateManager.this.soundManager.launch();
-                    AudioStateManager.this.audioFunctions.startListenning();
-                }
-            });
-        }
+
+            AudioStateManager.this.soundManager = AudioStateManager.this.createSoundSensor(ctxt);
+            AudioStateManager.this.soundManager.launch();
+            AudioStateManager.this.audioFunctions.startListenning();
     }
 
     public void stopListenning(Context ctxt) {

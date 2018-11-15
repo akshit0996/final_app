@@ -7,23 +7,11 @@
     tools:context="com.project.heart.myapplication.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <ToggleButton
-        android:id="@+id/listenToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
-        android:layout_marginStart="54dp"
-        android:text="ToggleButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/recordToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:text="ToggleButton"
-        app:layout_constraintBottom_toBottomOf="@+id/listenToggleButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/listenToggleButton" />
+        <fragment
+            android:name="com.project.heart.myapplication.SecondFragment"
+            android:id="@+id/fragment_place"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></fragment>
 </android.support.constraint.ConstraintLayout>
